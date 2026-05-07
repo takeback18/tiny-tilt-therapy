@@ -44,11 +44,25 @@ export default function Hero() {
           {/* Text */}
           <div className="order-2 lg:order-1">
             <span className="inline-block bg-sage-100 text-sage-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 -rotate-1 shadow-sm">
-              · Torticollis Awareness &amp; Support ·
+              ✦ Torticollis Awareness &amp; Support ✦
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight mb-6">
-              Helping Your Little One{' '}
-              <span className="text-sage-500">Find Their Balance</span>
+              Helping Your{' '}
+              <span className="inline-block bg-warm-200 px-2 py-0.5 rounded-lg -rotate-1">
+                Little One
+              </span>{' '}
+              <span
+                className="text-sage-500 whitespace-nowrap"
+                style={{
+                  textDecorationLine: 'underline',
+                  textDecorationStyle: 'wavy',
+                  textDecorationColor: '#7fbfad',
+                  textDecorationThickness: '3px',
+                  textUnderlineOffset: '6px',
+                }}
+              >
+                Find Their Balance
+              </span>
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               Tiny Tilt Therapy is a group of dedicated pediatric therapists passionate
