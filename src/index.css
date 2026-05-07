@@ -18,6 +18,10 @@
   --color-sky-500: #2273a8;
   --color-sky-600: #1a5b8a;
 
+  --color-warm-100: #fef3c7;
+  --color-warm-200: #fde68a;
+  --color-warm-300: #fcd34d;
+
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Nunito', 'Inter', system-ui, sans-serif;
 }
