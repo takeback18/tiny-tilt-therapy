@@ -28,12 +28,8 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo — swap the div below for an <img> once you have the real logo */}
-          <a href="#home" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-sage-500 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-xs font-bold">TTT</span>
-            </div>
-            <span className="font-semibold text-sage-700 text-lg">Tiny Tilt Therapy</span>
+          <a href="#home">
+            <img src="/logo.jpg" alt="Tiny Tilt Therapy" className="h-12 w-auto" />
           </a>
 
           {/* Desktop nav */}

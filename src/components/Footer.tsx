@@ -7,11 +7,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-sage-600 text-xs font-bold">TTT</span>
-              </div>
-              <span className="font-semibold text-lg">Tiny Tilt Therapy</span>
+            <div className="mb-3">
+              <img src="/logo.jpg" alt="Tiny Tilt Therapy" className="h-14 w-auto rounded-lg" />
             </div>
             <p className="text-sage-100 text-sm leading-relaxed">
               Dedicated to torticollis awareness and compassionate support for families
