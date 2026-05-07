@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-3">
-              <img src="/logo.jpg" alt="Tiny Tilt Therapy" className="h-14 w-auto rounded-lg" />
+              <img src="/logo.png" alt="Tiny Tilt Therapy" className="h-16 w-auto" />
             </div>
             <p className="text-sage-100 text-sm leading-relaxed">
               Dedicated to torticollis awareness and compassionate support for families
