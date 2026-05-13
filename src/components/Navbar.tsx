@@ -28,8 +28,11 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#home">
-            <img src="/logo.png" alt="Tiny Tilt Therapy" className="h-14 w-auto" />
+          <a href="#home" className="text-center select-none leading-none">
+            <div className="text-lg font-bold text-sage-600" style={{ fontFamily: 'Comfortaa, cursive' }}>
+              <span className="text-sage-300">·</span>tiny<span className="text-sage-300">·</span>tilt<span className="text-sage-300">·</span>
+            </div>
+            <div className="text-[0.6rem] text-gray-400 tracking-[0.2em] font-light">In-Home Therapy</div>
           </a>
 
           {/* Desktop nav */}
