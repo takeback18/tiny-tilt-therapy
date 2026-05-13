@@ -86,13 +86,26 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Logo */}
+          {/* Logo text */}
           <div className="order-1 lg:order-2 flex justify-center items-center">
-            <img
-              src="/logo.png"
-              alt="Tiny Tilt Therapy"
-              className="w-64 sm:w-80 lg:w-[26rem] drop-shadow-lg"
-            />
+            <div className="text-center select-none">
+              <div
+                className="text-6xl sm:text-7xl lg:text-8xl font-bold text-sage-600 leading-none flex items-center justify-center gap-2"
+                style={{ fontFamily: 'Comfortaa, cursive' }}
+              >
+                <span className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-sage-300 inline-block mb-1" />
+                <span>tiny</span>
+                <span className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-sage-300 inline-block mb-1" />
+                <span>tilt</span>
+                <span className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-sage-300 inline-block mb-1" />
+              </div>
+              <p
+                className="text-lg sm:text-xl text-gray-400 tracking-[0.3em] font-light mt-4"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                In-Home Therapy
+              </p>
+            </div>
           </div>
 
         </div>
