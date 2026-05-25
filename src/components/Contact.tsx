@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa6'
+import { FaInstagram, FaTiktok } from 'react-icons/fa6'
 
 export default function Contact() {
   return (
@@ -74,15 +74,6 @@ export default function Contact() {
                 aria-label="Instagram"
               >
                 <FaInstagram size={20} />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center text-sky-500 hover:bg-sky-200 transition-colors"
-                aria-label="Facebook"
-              >
-                <FaFacebook size={20} />
               </a>
               <a
                 href="#"

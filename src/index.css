@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sage-50: #eff8f4;
-  --color-sage-100: #d4eae2;
-  --color-sage-200: #a9d4c5;
-  --color-sage-300: #7fbfad;
-  --color-sage-400: #5aaa96;
-  --color-sage-500: #3d8f7c;
-  --color-sage-600: #2e7262;
-  --color-sage-700: #1f5247;
+  /* Primary — deep teal */
+  --color-sage-50:  #edf6f8;
+  --color-sage-100: #cce4e9;
+  --color-sage-200: #83afb3;
+  --color-sage-300: #83b39f;
+  --color-sage-400: #3d8a9e;
+  --color-sage-500: #00667f;
+  --color-sage-600: #005469;
+  --color-sage-700: #003d4f;
 
-  --color-sky-50: #edf6fb;
-  --color-sky-100: #c8dfed;
-  --color-sky-200: #96c4de;
-  --color-sky-300: #64a9ce;
-  --color-sky-400: #3d8dbd;
-  --color-sky-500: #2273a8;
-  --color-sky-600: #1a5b8a;
+  /* Secondary — slate blue */
+  --color-sky-50:  #f2f4f8;
+  --color-sky-100: #d4dae9;
+  --color-sky-200: #b0bcda;
+  --color-sky-300: #9aaac9;
+  --color-sky-400: #8397b3;
+  --color-sky-500: #6a7d9e;
+  --color-sky-600: #546085;
 
-  --color-warm-100: #fef3c7;
-  --color-warm-200: #fde68a;
-  --color-warm-300: #fcd34d;
+  /* Cream neutrals */
+  --color-warm-100: #fbf8f4;
+  --color-warm-200: #f2ebe1;
+  --color-warm-300: #e8ddd1;
 
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Nunito', 'Inter', system-ui, sans-serif;

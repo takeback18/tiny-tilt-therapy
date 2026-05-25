@@ -41,7 +41,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-sage-200">
               {[
                 ['Instagram', 'https://www.instagram.com/tiny.tilt'],
-                ['Facebook', '#'],
                 ['TikTok', '#'],
                 ['Contact Us', '#contact'],
               ].map(([label, href]) => (

@@ -18,11 +18,11 @@ export default function Hero() {
       <div className="absolute -bottom-16 left-1/3 w-72 h-72 bg-sky-100 rounded-full blur-3xl opacity-40" />
       <div
         className="absolute top-8 right-1/4 w-56 h-56 blur-3xl opacity-25"
-        style={{ background: '#fde68a', borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}
+        style={{ background: '#fbf8f4', borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%' }}
       />
       <div
         className="absolute bottom-24 -left-8 w-48 h-48 blur-2xl opacity-20"
-        style={{ background: '#a9d4c5', borderRadius: '40% 60% 70% 30% / 50% 60% 40% 50%' }}
+        style={{ background: '#83b39f', borderRadius: '40% 60% 70% 30% / 50% 60% 40% 50%' }}
       />
 
       {/* Sparkle stars */}
@@ -44,38 +44,34 @@ export default function Hero() {
           {/* Text */}
           <div className="order-2 lg:order-1">
             <span className="inline-block bg-sage-100 text-sage-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 -rotate-1 shadow-sm">
-              ✦ Torticollis Awareness &amp; Support ✦
+              ✦ Early Support for Every Tiny Tilt ✦
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight mb-6">
-              Helping Your{' '}
-              <span className="inline-block bg-warm-200 px-2 py-0.5 rounded-lg -rotate-1">
-                Little One
-              </span>{' '}
-              <span
-                className="text-sage-500 whitespace-nowrap"
-                style={{
-                  textDecorationLine: 'underline',
-                  textDecorationStyle: 'wavy',
-                  textDecorationColor: '#7fbfad',
-                  textDecorationThickness: '3px',
-                  textUnderlineOffset: '6px',
-                }}
-              >
-                Find Their Balance
-              </span>
+              Supporting{' '}
+              <span className="text-sage-500">Symmetry, Strength,</span>
+              {' '}and Development
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Tiny Tilt Therapy is a group of dedicated pediatric therapists passionate
-              about torticollis awareness and early intervention. We educate families and
-              offer in-home consultations to support your child's journey toward
-              comfortable, healthy movement.
-            </p>
+            <div className="text-lg text-gray-600 leading-relaxed mb-8 space-y-4">
+              <p>
+                We're a team of moms and board-certified pediatric physical therapists in
+                Northeast Florida, so we understand firsthand both the clinical expertise
+                and the everyday realities of caring for little ones.
+              </p>
+              <p>
+                We're passionate about helping babies with torticollis, head tilts, and
+                flat head concerns move, grow, and thrive from the very beginning.
+              </p>
+              <p>
+                We believe in early intervention, empowering parent education, and truly
+                individualized care. Every baby's journey is unique.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4">
               <a
-                href="#about"
+                href="#services"
                 className="bg-sage-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-sage-600 transition-colors shadow-sm"
               >
-                Learn About Torticollis
+                Learn About Our Services
               </a>
               <a
                 href="#team"
