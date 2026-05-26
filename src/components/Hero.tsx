@@ -85,9 +85,9 @@ export default function Hero() {
           {/* Logo */}
           <div className="order-1 lg:order-2 flex justify-center items-center">
             <img
-              src="/logo.png"
-              alt="Tiny Tilt Therapy"
-              className="w-64 sm:w-80 lg:w-[26rem] drop-shadow-lg"
+              src="/baby1.JPG"
+              alt="Happy baby"
+              className="w-64 sm:w-80 lg:w-[26rem] rounded-3xl drop-shadow-lg object-cover"
             />
           </div>
 

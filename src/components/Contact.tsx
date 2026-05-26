@@ -1,5 +1,3 @@
-import { FaInstagram, FaTiktok } from 'react-icons/fa6'
-
 export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-white">
@@ -62,30 +60,6 @@ export default function Contact() {
               Send Message
             </button>
           </form>
-
-          <div className="text-center mt-10">
-            <p className="text-gray-400 text-sm mb-5">Or find us on social media</p>
-            <div className="flex justify-center gap-4">
-              <a
-                href="https://www.instagram.com/tiny.tilt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center text-sage-600 hover:bg-sage-200 transition-colors"
-                aria-label="Instagram"
-              >
-                <FaInstagram size={20} />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center text-sage-600 hover:bg-sage-200 transition-colors"
-                aria-label="TikTok"
-              >
-                <FaTiktok size={18} />
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

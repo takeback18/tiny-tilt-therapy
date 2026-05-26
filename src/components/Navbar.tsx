@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
+import { FaInstagram, FaTiktok } from 'react-icons/fa6'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -28,11 +29,14 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#home" className="text-center select-none leading-none">
-            <div className="text-2xl font-extrabold text-sage-600" style={{ fontFamily: 'Comfortaa, cursive' }}>
-              <span className="text-sage-300">·</span>tiny<span className="text-sage-300">·</span>tilt<span className="text-sage-300">·</span>
-            </div>
-            <div className="text-[0.6rem] text-gray-400 tracking-[0.2em] font-light">In-Home Therapy</div>
+
+          {/* Logo */}
+          <a href="#home" className="select-none flex-shrink-0">
+            <img
+              src="/logo-nav.png"
+              alt="Tiny Tilt Therapy"
+              className="h-40 w-auto"
+            />
           </a>
 
           {/* Desktop nav */}
@@ -46,12 +50,28 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="bg-sage-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-sage-600 transition-colors"
-            >
-              Book a Visit
-            </a>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-3 ml-2 border-l border-gray-200 pl-4">
+              <a
+                href="https://www.instagram.com/tiny.tilt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-sage-500 transition-colors"
+              >
+                <FaInstagram size={20} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@tiny.tilt"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="text-gray-400 hover:text-sage-500 transition-colors"
+              >
+                <FaTiktok size={18} />
+              </a>
+            </div>
           </div>
 
           {/* Mobile toggle */}
@@ -78,13 +98,26 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="bg-sage-500 text-white px-4 py-2.5 rounded-full text-sm font-medium text-center hover:bg-sage-600 transition-colors mt-2"
-            onClick={() => setMobileOpen(false)}
-          >
-            Book a Visit
-          </a>
+          <div className="flex gap-4 pt-2 border-t border-gray-100 mt-2">
+            <a
+              href="https://www.instagram.com/tiny.tilt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-gray-400 hover:text-sage-500 transition-colors"
+            >
+              <FaInstagram size={22} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@tiny.tilt"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="text-gray-400 hover:text-sage-500 transition-colors"
+            >
+              <FaTiktok size={20} />
+            </a>
+          </div>
         </div>
       )}
     </nav>
