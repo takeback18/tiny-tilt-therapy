@@ -1,43 +1,48 @@
+import { useState, useEffect } from 'react'
+
 interface Therapist {
-  initials: string
   name: string
   title: string
   bio: string
-  avatarColor: string
+  image: string
 }
 
 const therapists: Therapist[] = [
   {
-    initials: '??',
-    name: '[Therapist Name]',
-    title: 'Pediatric Physical Therapist',
-    bio: 'Placeholder bio — share your background, certifications, and what drew you to torticollis care. This is a great place to add a personal touch.',
-    avatarColor: 'bg-sage-400',
+    name: 'Jessie Kristof',
+    title: 'Pediatric Physical Therapist, DPT',
+    image: '/Jessie.png',
+    bio: 'Jessie Kristof is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from the University of North Florida Doctor of Physical Therapy (DPT) program in 2016 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, school system, early intervention / in-home and outpatient settings.',
   },
   {
-    initials: '??',
-    name: '[Therapist Name]',
-    title: 'Pediatric Occupational Therapist',
-    bio: 'Placeholder bio — share your background, certifications, and what drew you to torticollis care. This is a great place to add a personal touch.',
-    avatarColor: 'bg-sky-400',
+    name: 'Melanie Hill',
+    title: 'Pediatric Physical Therapist, DPT',
+    image: '/Melanie.PNG',
+    bio: 'Melanie Hill is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from Ithaca College Doctor of Physical Therapy (DPT) program in 2013 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2015. She has PT clinical experience in acute care, school system and outpatient settings.',
   },
   {
-    initials: '??',
-    name: '[Therapist Name]',
-    title: 'Pediatric Physical Therapist',
-    bio: 'Placeholder bio — share your background, certifications, and what drew you to torticollis care. This is a great place to add a personal touch.',
-    avatarColor: 'bg-sage-300',
+    name: 'Caroline Scott',
+    title: 'Pediatric Physical Therapist, DPT',
+    image: '/Caroline.JPEG',
+    bio: 'Caroline Scott is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from Duke University Doctor of Physical Therapy (DPT) program in 2017 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, inpatient rehabilitation, early intervention / in-home and outpatient settings.',
   },
   {
-    initials: '??',
-    name: '[Therapist Name]',
-    title: 'Pediatric Occupational Therapist',
-    bio: 'Placeholder bio — share your background, certifications, and what drew you to torticollis care. This is a great place to add a personal touch.',
-    avatarColor: 'bg-sky-300',
+    name: 'Shelbi Moxley',
+    title: 'Pediatric Physical Therapist, DPT',
+    image: '/Shelbi.PNG',
+    bio: 'Shelbi Moxley is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from University of St. Augustine Doctor of Physical Therapy (DPT) program in 2019 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2022. She has PT clinical experience in NICU discharge / follow-up care, acute care, early intervention / in-home and outpatient settings.',
   },
 ]
 
 export default function Team() {
+  const [selected, setSelected] = useState<Therapist | null>(null)
+
+  // Lock background scroll while modal is open
+  useEffect(() => {
+    document.body.style.overflow = selected ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [selected])
+
   return (
     <section id="team" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,22 +59,75 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {therapists.map((t, i) => (
-            <div key={i} className="text-center">
-              {/* Replace this div with an <img> once headshots are available */}
-              <div
-                className={`w-28 h-28 rounded-full ${t.avatarColor} flex items-center justify-center mx-auto mb-4`}
-              >
-                <span className="text-white text-2xl font-bold">{t.initials}</span>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {therapists.map((t) => (
+            <div
+              key={t.name}
+              className="flex flex-col items-center text-center cursor-pointer group"
+              onClick={() => setSelected(t)}
+            >
+              <div className="w-36 h-36 rounded-full overflow-hidden shadow-sm group-hover:shadow-md transition-shadow mb-4">
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-lg font-semibold text-gray-800">{t.name}</h3>
               <p className="text-sage-500 text-sm font-medium mb-3">{t.title}</p>
-              <p className="text-gray-500 text-sm leading-relaxed">{t.bio}</p>
+              <button
+                className="text-sm text-sage-500 font-medium hover:text-sage-600 transition-colors hover:underline underline-offset-2"
+                onClick={(e) => { e.stopPropagation(); setSelected(t) }}
+              >
+                Read Bio →
+              </button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="bg-white rounded-t-3xl sm:rounded-2xl shadow-xl w-full sm:max-w-lg max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative p-8 pt-10">
+              {/* Close button */}
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 transition-colors text-sm"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+
+              {/* Pull handle on mobile */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-10 h-1 bg-gray-200 rounded-full sm:hidden" />
+
+              {/* Therapist info */}
+              <div className="flex flex-col items-center text-center mb-6">
+                <div className="w-28 h-28 rounded-full overflow-hidden shadow-md mb-4">
+                  <img
+                    src={selected.image}
+                    alt={selected.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800">{selected.name}</h3>
+                <p className="text-sage-500 text-sm font-medium mt-1">{selected.title}</p>
+              </div>
+
+              {/* Bio */}
+              <p className="text-gray-600 leading-relaxed text-sm">{selected.bio}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
