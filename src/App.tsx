@@ -1,25 +1,12 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import WhatIsTorticollis from './components/WhatIsTorticollis'
-import Services from './components/Services'
-import Team from './components/Team'
-import Affiliates from './components/Affiliates'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import MainPage from './pages/MainPage'
+import Resources from './pages/Resources'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <WhatIsTorticollis />
-        <Services />
-        <Team />
-        <Affiliates />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/resources" element={<Resources />} />
+    </Routes>
   )
 }

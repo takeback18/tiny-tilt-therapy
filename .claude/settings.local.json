@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\endre\\\\Projects\\\\tiny-tilt-therapy\\\\src\\\\pages\")",
+      "Bash(Out-Null)",
+      "Bash(Write-Output \"done\")",
+      "PowerShell(New-Item *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

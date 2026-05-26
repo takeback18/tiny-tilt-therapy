@@ -9,28 +9,28 @@ interface Therapist {
 
 const therapists: Therapist[] = [
   {
-    name: 'Jessie Kristof',
-    title: 'Pediatric Physical Therapist, DPT',
-    image: '/Jessie.png',
-    bio: 'Jessie Kristof is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from the University of North Florida Doctor of Physical Therapy (DPT) program in 2016 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, school system, early intervention / in-home and outpatient settings.',
-  },
-  {
-    name: 'Melanie Hill',
-    title: 'Pediatric Physical Therapist, DPT',
+    name: 'Melanie Hill, PT, DPT, PCS',
+    title: 'Pediatric Physical Therapist',
     image: '/Melanie.PNG',
     bio: 'Melanie Hill is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from Ithaca College Doctor of Physical Therapy (DPT) program in 2013 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2015. She has PT clinical experience in acute care, school system and outpatient settings.',
   },
   {
-    name: 'Caroline Scott',
-    title: 'Pediatric Physical Therapist, DPT',
-    image: '/Caroline.JPEG',
-    bio: 'Caroline Scott is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from Duke University Doctor of Physical Therapy (DPT) program in 2017 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, inpatient rehabilitation, early intervention / in-home and outpatient settings.',
+    name: 'Jessie Kristof, PT, DPT, PCS',
+    title: 'Pediatric Physical Therapist',
+    image: '/Jessie.png',
+    bio: 'Jessie Kristof is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from the University of North Florida Doctor of Physical Therapy (DPT) program in 2016 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, school system, early intervention / in-home and outpatient settings.',
   },
   {
-    name: 'Shelbi Moxley',
-    title: 'Pediatric Physical Therapist, DPT',
+    name: 'Shelbi Moxley, PT, DPT, PCS',
+    title: 'Pediatric Physical Therapist',
     image: '/Shelbi.PNG',
     bio: 'Shelbi Moxley is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from University of St. Augustine Doctor of Physical Therapy (DPT) program in 2019 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2022. She has PT clinical experience in NICU discharge / follow-up care, acute care, early intervention / in-home and outpatient settings.',
+  },
+  {
+    name: 'Caroline Scott, PT, DPT, PCS',
+    title: 'Pediatric Physical Therapist',
+    image: '/Caroline.JPEG',
+    bio: 'Caroline Scott is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from Duke University Doctor of Physical Therapy (DPT) program in 2017 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, inpatient rehabilitation, early intervention / in-home and outpatient settings.',
   },
 ]
 
@@ -73,7 +73,7 @@ export default function Team() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800">{t.name}</h3>
+              <h3 className="text-sm font-semibold text-gray-800 whitespace-nowrap">{t.name}</h3>
               <p className="text-sage-500 text-sm font-medium mb-3">{t.title}</p>
               <button
                 className="text-sm text-sage-500 font-medium hover:text-sage-600 transition-colors hover:underline underline-offset-2"

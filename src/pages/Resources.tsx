@@ -1,0 +1,163 @@
+import { useState, useMemo } from 'react'
+import { FiSearch, FiExternalLink, FiArrowLeft } from 'react-icons/fi'
+import { CATEGORIES, resources } from '../data/resources'
+import type { Category } from '../data/resources'
+import Footer from '../components/Footer'
+
+const categoryColors: Record<Category, { badge: string; card: string }> = {
+  'Baby Toys': {
+    badge: 'bg-sky-100 text-sky-500',
+    card:  'border-sky-100 hover:border-sky-300',
+  },
+  Books: {
+    badge: 'bg-sage-100 text-sage-600',
+    card:  'border-sage-100 hover:border-sage-300',
+  },
+}
+
+// Fallback for any future category not yet added to categoryColors
+function getBadgeStyle(category: Category) {
+  return categoryColors[category]?.badge ?? 'bg-gray-100 text-gray-600'
+}
+function getCardStyle(category: Category) {
+  return categoryColors[category]?.card ?? 'border-gray-100 hover:border-gray-300'
+}
+
+export default function Resources() {
+  const [search, setSearch] = useState('')
+  const [activeCategory, setActiveCategory] = useState<Category | 'All'>('All')
+
+  const filtered = useMemo(() => {
+    const q = search.toLowerCase()
+    return resources.filter((r) => {
+      const matchesCategory = activeCategory === 'All' || r.category === activeCategory
+      const matchesSearch =
+        !q ||
+        r.name.toLowerCase().includes(q) ||
+        r.description.toLowerCase().includes(q)
+      return matchesCategory && matchesSearch
+    })
+  }, [search, activeCategory])
+
+  return (
+    <div className="min-h-screen bg-white flex flex-col">
+      {/* Simple top bar */}
+      <header className="bg-white border-b border-gray-100 sticky top-0 z-40">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a
+            href="/"
+            className="flex items-center gap-2 text-sage-500 hover:text-sage-600 transition-colors text-sm font-medium"
+          >
+            <FiArrowLeft size={16} />
+            Back to Home
+          </a>
+          <a href="/" className="text-center select-none leading-none">
+            <div className="text-xl font-extrabold text-sage-600" style={{ fontFamily: 'Comfortaa, cursive' }}>
+              <span className="text-sage-300">·</span>tiny<span className="text-sage-300">·</span>tilt<span className="text-sage-300">·</span>
+            </div>
+          </a>
+          <a
+            href="/#contact"
+            className="bg-sage-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-sage-600 transition-colors"
+          >
+            Book a Visit
+          </a>
+        </div>
+      </header>
+
+      <main className="flex-1 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Heading */}
+          <div className="text-center mb-10">
+            <span className="inline-block bg-sage-100 text-sage-600 text-sm font-medium px-3 py-1 rounded-full mb-4">
+              Resources
+            </span>
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+              Our Resource Library
+            </h1>
+            <p className="text-gray-600 max-w-xl mx-auto leading-relaxed">
+              Hand-picked by our therapists to support your family's torticollis journey.{' '}
+              <span className="text-gray-400 text-sm">
+                Some links may be affiliate links — at no extra cost to you.
+              </span>
+            </p>
+          </div>
+
+          {/* Search */}
+          <div className="relative max-w-md mx-auto mb-8">
+            <FiSearch
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+              size={18}
+            />
+            <input
+              type="text"
+              placeholder="Search resources..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-11 pr-4 py-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sage-300 transition bg-white shadow-sm"
+            />
+          </div>
+
+          {/* Category filter pills */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {(['All', ...CATEGORIES] as const).map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors border ${
+                  activeCategory === cat
+                    ? 'bg-sage-500 text-white border-sage-500'
+                    : 'bg-white text-gray-500 border-gray-200 hover:border-sage-300 hover:text-sage-600'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Results */}
+          {filtered.length > 0 ? (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`bg-white rounded-2xl p-6 border-2 shadow-sm transition-all group ${getCardStyle(item.category)}`}
+                >
+                  {item.image && (
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-40 object-contain mb-4 rounded-lg"
+                    />
+                  )}
+                  <div className="flex items-start justify-between mb-3">
+                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${getBadgeStyle(item.category)}`}>
+                      {item.category}
+                    </span>
+                    <FiExternalLink
+                      size={16}
+                      className="text-gray-300 group-hover:text-sage-500 transition-colors flex-shrink-0 mt-0.5"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-800 mb-2">{item.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20 text-gray-400">
+              <p className="text-lg mb-1">No resources found</p>
+              <p className="text-sm">Try a different search or category</p>
+            </div>
+          )}
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  )
+}
