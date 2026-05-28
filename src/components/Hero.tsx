@@ -38,11 +38,11 @@ export default function Hero() {
       <div className="absolute bottom-1/2 left-24 w-2 h-2 rounded-full bg-warm-300 opacity-50" />
       <div className="absolute top-48 right-8 w-3 h-3 rounded-full bg-sky-300 opacity-50 hidden lg:block" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center">
 
           {/* Text */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 lg:pr-10">
             <span className="inline-block bg-sage-100 text-sage-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 -rotate-1 shadow-sm">
               ✦ Early Support for Every Tiny Tilt ✦
             </span>
@@ -82,13 +82,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Logo */}
-          <div className="order-1 lg:order-2 flex justify-center items-center">
-            <img
-              src="/baby1.JPG"
-              alt="Happy baby"
-              className="w-64 sm:w-80 lg:w-[26rem] rounded-3xl drop-shadow-lg object-cover"
-            />
+          {/* Image with left fade into background */}
+          <div className="order-1 lg:order-2 relative flex justify-center lg:block">
+            <div className="relative w-64 sm:w-80 lg:w-full">
+              <img
+                src="/baby2.jpg"
+                alt="Happy baby"
+                className="w-full h-72 sm:h-80 lg:h-[34rem] object-cover rounded-3xl lg:rounded-l-none lg:rounded-r-3xl"
+              />
+              {/* Fade from white background into image — desktop only */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+            </div>
           </div>
 
         </div>

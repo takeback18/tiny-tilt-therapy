@@ -1,17 +1,38 @@
-import { useState, useMemo } from 'react'
+import { useMemo } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { FiSearch, FiExternalLink, FiArrowLeft } from 'react-icons/fi'
 import { CATEGORIES, resources } from '../data/resources'
 import type { Category } from '../data/resources'
 import Footer from '../components/Footer'
 
 const categoryColors: Record<Category, { badge: string; card: string }> = {
+  'Baby Care Items': {
+    badge: 'bg-warm-200 text-sage-600',
+    card:  'border-warm-200 hover:border-warm-300',
+  },
+  'Baby Containers': {
+    badge: 'bg-sky-100 text-sky-600',
+    card:  'border-sky-100 hover:border-sky-300',
+  },
+  'Baby Feeding': {
+    badge: 'bg-sage-100 text-sage-700',
+    card:  'border-sage-100 hover:border-sage-300',
+  },
+  'Baby Safety': {
+    badge: 'bg-sky-50 text-sky-600',
+    card:  'border-sky-100 hover:border-sky-200',
+  },
   'Baby Toys': {
     badge: 'bg-sky-100 text-sky-500',
     card:  'border-sky-100 hover:border-sky-300',
   },
-  Books: {
-    badge: 'bg-sage-100 text-sage-600',
-    card:  'border-sage-100 hover:border-sage-300',
+  'Nursing and Pumping': {
+    badge: 'bg-sage-50 text-sage-600',
+    card:  'border-sage-100 hover:border-sage-200',
+  },
+  'Toddler Toys': {
+    badge: 'bg-warm-100 text-sage-600',
+    card:  'border-warm-100 hover:border-warm-200',
   },
 }
 
@@ -24,8 +45,30 @@ function getCardStyle(category: Category) {
 }
 
 export default function Resources() {
-  const [search, setSearch] = useState('')
-  const [activeCategory, setActiveCategory] = useState<Category | 'All'>('All')
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const search = searchParams.get('q') ?? ''
+  const categoryParam = searchParams.get('category')
+  const activeCategory: Category | 'All' =
+    categoryParam && (CATEGORIES as readonly string[]).includes(categoryParam)
+      ? (categoryParam as Category)
+      : 'All'
+
+  function setSearch(q: string) {
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev)
+      q ? next.set('q', q) : next.delete('q')
+      return next
+    }, { replace: true })
+  }
+
+  function setActiveCategory(cat: Category | 'All') {
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev)
+      cat !== 'All' ? next.set('category', cat) : next.delete('category')
+      return next
+    }, { replace: true })
+  }
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase()
@@ -51,10 +94,8 @@ export default function Resources() {
             <FiArrowLeft size={16} />
             Back to Home
           </a>
-          <a href="/" className="text-center select-none leading-none">
-            <div className="text-xl font-extrabold text-sage-600" style={{ fontFamily: 'Comfortaa, cursive' }}>
-              <span className="text-sage-300">·</span>tiny<span className="text-sage-300">·</span>tilt<span className="text-sage-300">·</span>
-            </div>
+          <a href="/" className="select-none flex-shrink-0">
+            <img src="/logo-nav.png" alt="Tiny Tilt Therapy" className="h-40 w-auto" />
           </a>
           <a
             href="/#contact"
