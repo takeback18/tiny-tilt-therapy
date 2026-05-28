@@ -289,4 +289,38 @@ export const resources: Resource[] = [
     href: 'https://www.amazon.com/dp/B08GFCX964?tag=tinytilt-20',
     image: 'https://pandaear.com/cdn/shop/files/thick-silicone-baby-bibs-3-pack-pandaear-1-34733853344058.jpg?v=1693216901&width=1946',
   },
+  {
+    category: 'Baby Safety',
+    name: 'Infant Optics DXR-8 Video Baby Monitor',
+    description: 'A non-WiFi closed-loop video baby monitor with a 3.5-inch screen, pan/tilt/zoom remote camera controls, and interchangeable optical lens technology — completely hack-proof with no internet connection required. Up to 500-foot range covers the whole home with two-way audio for voice reassurance.',
+    href: 'https://www.amazon.com/dp/B00ECHYTBI?coliid=I29AINQMXL4N0E&colid=12KQ2MBP15F54&psc=1&linkCode=ll2&tag=tinytilt-20&linkId=2e2f562786a9c7a5f0d747a0d057dd4c&language=en_US&ref_=as_li_ss_tl',
+    image: 'https://i0.wp.com/infantoptics.com/wp-content/uploads/2023/03/Free-addon-camv2.jpg?fit=1080%2C1080&ssl=1',
+  },
+  {
+    category: 'Baby Safety',
+    name: 'Regalo WideSpan Extra Tall Safety Baby Gate',
+    description: 'A pressure-mounted safety gate certified by the Baby Safety Alliance that expands to fit openings 29–49 inches wide and stands 36 inches tall for doorways and the bottom of stairs. Features an easy-latch walk-through door with wall shields to prevent wall damage during installation.',
+    href: 'https://www.amazon.com/dp/B003VNKLHK?coliid=I2ABWG9FYKL9J2&colid=12KQ2MBP15F54&th=1&linkCode=ll2&tag=tinytilt-20&linkId=d29796d1814313a92a00f9e253e9c99a&language=en_US&ref_=as_li_ss_tl',
+    image: 'https://regalo-baby.com/cdn/shop/files/1154-Hero3-Assembly-WallCups_600x.webp?v=1706033925',
+  },
+  {
+    category: 'Baby Safety',
+    name: 'Safety 1st Adhesive Magnetic Cabinet Lock System, 8 Locks and 2 Keys',
+    description: 'A tool-free magnetic locking system with peel-and-stick installation that keeps cabinet and drawer hazards completely hidden from curious hands. The locking mechanism sits entirely inside the cabinet and opens only with the included magnetic key — invisible to babies and toddlers.',
+    href: 'https://www.amazon.com/dp/B076QN2V4Q?coliid=I18OFXLRUG5M0W&colid=12KQ2MBP15F54&th=1&linkCode=ll2&tag=tinytilt-20&linkId=cec5445b493dcc05db952adee675907f&language=en_US&ref_=as_li_ss_tl',
+    image: 'https://safety1st.com/cdn/shop/files/xu8ofp61dltmoshn7moc.png?v=1725386728&width=1200',
+  },
+  {
+    category: 'Baby Safety',
+    name: 'Safety 1st TV & Furniture Safety Straps, 2-Pack',
+    description: 'Heavy-duty nylon straps with triple stitching that secure TVs and furniture to walls in four different configurations, preventing dangerous tip-over accidents as babies become mobile and curious. Screws and hardware are included for immediate installation on most furniture types.',
+    href: 'https://www.amazon.com/dp/B07H5532V6?coliid=I3FIQGR6ZJ8SW5&colid=12KQ2MBP15F54&th=1&linkCode=ll2&tag=tinytilt-20&linkId=9622e41b86949056e82978215462df55&language=en_US&ref_=as_li_ss_tl',
+    image: 'https://safety1st.com/cdn/shop/files/01-HS304_SF_Pkg.jpg?v=1752762506&width=1200',
+  },
+  {
+    category: 'Baby Safety',
+    name: 'Safety Innovations Twin Door Outlet Cover Box',
+    description: 'A dual-button outlet cover box requiring simultaneous two-handed operation to open, making electrical outlets inaccessible to toddlers while accommodating larger plugs and adapters that standard outlet caps cannot cover. A reliable babyproofing solution for any occupied outlet.',
+    href: 'https://www.amazon.com/dp/B007IUOG5A?coliid=I1RICT7UB4O6DC&colid=12KQ2MBP15F54&psc=1&linkCode=ll2&tag=tinytilt-20&linkId=8477b9c31df138e3a3ddb02808e682b9&language=en_US&ref_=as_li_ss_tl',
+  },
 ]
