@@ -84,7 +84,7 @@ export default function Services() {
 
               {/* Image — always first in DOM so it appears on top on mobile */}
               <div
-                className={`relative flex-1 overflow-hidden rounded-2xl h-72 sm:h-80 lg:h-auto lg:min-h-[22rem] ${
+                className={`relative flex-1 overflow-hidden -mx-4 sm:-mx-6 lg:mx-0 rounded-none h-72 sm:h-80 lg:h-auto lg:min-h-[22rem] ${
                   imageRight
                     ? 'lg:order-2 lg:rounded-l-none lg:rounded-r-3xl'
                     : 'lg:order-1 lg:rounded-r-none lg:rounded-l-3xl'
