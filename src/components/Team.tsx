@@ -5,6 +5,7 @@ interface Therapist {
   title: string
   bio: string
   image: string
+  objectPosition: string
 }
 
 const therapists: Therapist[] = [
@@ -12,24 +13,28 @@ const therapists: Therapist[] = [
     name: 'Melanie Hill, PT, DPT, PCS',
     title: 'Pediatric Physical Therapist',
     image: '/Melanie.PNG',
+    objectPosition: 'center 15%',
     bio: 'Melanie Hill is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from Ithaca College Doctor of Physical Therapy (DPT) program in 2013 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2015. She has PT clinical experience in acute care, school system and outpatient settings.',
   },
   {
     name: 'Jessie Kristof, PT, DPT, PCS',
     title: 'Pediatric Physical Therapist',
     image: '/Jessie.png',
+    objectPosition: 'center 15%',
     bio: 'Jessie Kristof is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from the University of North Florida Doctor of Physical Therapy (DPT) program in 2016 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, school system, early intervention / in-home and outpatient settings.',
   },
   {
     name: 'Shelbi Moxley, PT, DPT, PCS',
     title: 'Pediatric Physical Therapist',
     image: '/Shelbi.PNG',
+    objectPosition: 'center 20%',
     bio: 'Shelbi Moxley is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from University of St. Augustine Doctor of Physical Therapy (DPT) program in 2019 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2022. She has PT clinical experience in NICU discharge / follow-up care, acute care, early intervention / in-home and outpatient settings.',
   },
   {
     name: 'Caroline Scott, PT, DPT, PCS',
     title: 'Pediatric Physical Therapist',
     image: '/Caroline.JPEG',
+    objectPosition: 'center 25%',
     bio: 'Caroline Scott is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from Duke University Doctor of Physical Therapy (DPT) program in 2017 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, inpatient rehabilitation, early intervention / in-home and outpatient settings.',
   },
 ]
@@ -71,6 +76,7 @@ export default function Team() {
                   src={t.image}
                   alt={t.name}
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: t.objectPosition }}
                 />
               </div>
               <h3 className="text-sm font-semibold text-gray-800 whitespace-nowrap">{t.name}</h3>
@@ -116,6 +122,7 @@ export default function Team() {
                     src={selected.image}
                     alt={selected.name}
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: selected.objectPosition }}
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800">{selected.name}</h3>
