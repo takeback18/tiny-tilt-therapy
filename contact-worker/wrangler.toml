@@ -1,0 +1,8 @@
+name = "tiny-tilt-contact"
+main = "src/index.ts"
+compatibility_date = "2025-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[send_email]]
+name = "SEND_EMAIL"
+destination_address = "tinytilttherapy@gmail.com"
