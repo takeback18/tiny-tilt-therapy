@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-const WORKER_URL = import.meta.env.VITE_CONTACT_WORKER_URL as string
+const WORKER_URL: string = import.meta.env.VITE_CONTACT_WORKER_URL ?? ''
 
 export default function Contact() {
   const [firstName, setFirstName] = useState('')
@@ -18,6 +18,8 @@ export default function Contact() {
     setErrorMsg('')
 
     try {
+      if (!WORKER_URL) throw new Error('Contact service is not configured. Please try again later.')
+
       const res = await fetch(WORKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
