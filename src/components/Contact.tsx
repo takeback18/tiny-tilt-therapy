@@ -136,6 +136,7 @@ export default function Contact() {
               <Turnstile
                 ref={turnstileRef}
                 siteKey={TURNSTILE_SITE_KEY}
+                options={{ size: 'invisible' }}
                 onSuccess={(token) => setTurnstileToken(token)}
                 onError={() => setTurnstileToken('')}
                 onExpire={() => setTurnstileToken('')}
