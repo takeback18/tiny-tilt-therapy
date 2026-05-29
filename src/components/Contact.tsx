@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 const WORKER_URL: string = import.meta.env.VITE_CONTACT_WORKER_URL ?? ''
+const TURNSTILE_SITE_KEY: string = import.meta.env.VITE_TURNSTILE_SITE_KEY ?? ''
 
 export default function Contact() {
   const [firstName, setFirstName] = useState('')
@@ -11,6 +13,8 @@ export default function Contact() {
   const [message,   setMessage]   = useState('')
   const [status,    setStatus]    = useState<Status>('idle')
   const [errorMsg,  setErrorMsg]  = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const turnstileRef = useRef<TurnstileInstance>(null)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -19,11 +23,12 @@ export default function Contact() {
 
     try {
       if (!WORKER_URL) throw new Error('Contact service is not configured. Please try again later.')
+      if (!turnstileToken) throw new Error('Please complete the CAPTCHA.')
 
       const res = await fetch(WORKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName, lastName, email, message }),
+        body: JSON.stringify({ firstName, lastName, email, message, turnstileToken }),
       })
 
       const data = await res.json() as { ok?: boolean; error?: string }
@@ -37,9 +42,12 @@ export default function Contact() {
       setLastName('')
       setEmail('')
       setMessage('')
+      setTurnstileToken('')
+      turnstileRef.current?.reset()
     } catch (err) {
       setStatus('error')
       setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+      turnstileRef.current?.reset()
     }
   }
 
@@ -125,13 +133,21 @@ export default function Contact() {
                 />
               </div>
 
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={TURNSTILE_SITE_KEY}
+                onSuccess={(token) => setTurnstileToken(token)}
+                onError={() => setTurnstileToken('')}
+                onExpire={() => setTurnstileToken('')}
+              />
+
               {status === 'error' && (
                 <p className="text-sm text-red-500">{errorMsg}</p>
               )}
 
               <button
                 type="submit"
-                disabled={status === 'submitting'}
+                disabled={status === 'submitting' || !turnstileToken}
                 className="w-full bg-sage-500 text-white py-3 rounded-full font-medium hover:bg-sage-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? 'Sending…' : 'Send Message'}

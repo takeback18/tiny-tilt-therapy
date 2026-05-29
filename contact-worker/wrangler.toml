@@ -6,3 +6,10 @@ compatibility_flags = ["nodejs_compat"]
 [[send_email]]
 name = "SEND_EMAIL"
 destination_address = "tinytilttherapy@gmail.com"
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+
+[observability.traces]
+enabled = false

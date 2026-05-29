@@ -3,6 +3,7 @@ import { createMimeMessage } from "mimetext";
 
 interface Env {
   SEND_EMAIL: SendEmail;
+  TURNSTILE_SECRET: string;
 }
 
 const FROM = "noreply@tinytilttherapy.com";
@@ -42,10 +43,11 @@ export default {
       return json({ error: "Invalid request" }, 400);
     }
 
-    const firstName = typeof body.firstName === "string" ? sanitize(body.firstName) : "";
-    const lastName  = typeof body.lastName  === "string" ? sanitize(body.lastName)  : "";
-    const email     = typeof body.email     === "string" ? sanitize(body.email)     : "";
-    const message   = typeof body.message   === "string" ? sanitize(body.message)   : "";
+    const firstName      = typeof body.firstName      === "string" ? sanitize(body.firstName)      : "";
+    const lastName       = typeof body.lastName       === "string" ? sanitize(body.lastName)       : "";
+    const email          = typeof body.email          === "string" ? sanitize(body.email)          : "";
+    const message        = typeof body.message        === "string" ? sanitize(body.message)        : "";
+    const turnstileToken = typeof body.turnstileToken === "string" ? body.turnstileToken           : "";
 
     if (!firstName || !lastName || !email || !message) {
       return json({ error: "All fields are required" }, 400);
@@ -55,10 +57,27 @@ export default {
       return json({ error: "Invalid email address" }, 400);
     }
 
+    if (!turnstileToken) {
+      return json({ error: "CAPTCHA token missing." }, 400);
+    }
+
+    const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        secret: env.TURNSTILE_SECRET,
+        response: turnstileToken,
+        remoteip: request.headers.get("CF-Connecting-IP") ?? undefined,
+      }),
+    });
+    const verifyData = await verifyRes.json() as { success: boolean };
+    if (!verifyData.success) {
+      return json({ error: "CAPTCHA verification failed. Please try again." }, 400);
+    }
+
     const msg = createMimeMessage();
     msg.setSender({ name: "Tiny Tilt Contact Form", addr: FROM });
     msg.setRecipient(TO);
-    msg.setHeader("Reply-To", `${firstName} ${lastName} <${email}>`);
     msg.setSubject(`New Contact: ${firstName} ${lastName}`);
 
     msg.addMessage({
@@ -88,7 +107,7 @@ export default {
   <p style="font-weight:bold;margin-bottom:8px">Message</p>
   <p style="line-height:1.6;margin:0">${message.replace(/\n/g, "<br>")}</p>
   <hr style="border:none;border-top:1px solid #e0e0e0;margin:24px 0">
-  <p style="color:#888;font-size:12px">Sent via tinytilttherapy.com — hit Reply to respond directly to ${firstName}.</p>
+  <p style="color:#888;font-size:12px">Sent via tinytilttherapy.com.</p>
 </body>
 </html>`,
     });
