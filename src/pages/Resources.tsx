@@ -36,7 +36,6 @@ const categoryColors: Record<Category, { badge: string; card: string }> = {
   },
 }
 
-// Fallback for any future category not yet added to categoryColors
 function getBadgeStyle(category: Category) {
   return categoryColors[category]?.badge ?? 'bg-gray-100 text-gray-600'
 }
@@ -44,11 +43,18 @@ function getCardStyle(category: Category) {
   return categoryColors[category]?.card ?? 'border-gray-100 hover:border-gray-300'
 }
 
+function extractAsin(href: string): string {
+  const match = href.match(/\/dp\/([A-Z0-9]{10})/)
+  return match ? match[1] : ''
+}
+
 export default function Resources() {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const search = searchParams.get('q') ?? ''
   const categoryParam = searchParams.get('category')
+  const idParam = searchParams.get('id') ?? ''
+
   const activeCategory: Category | 'All' =
     categoryParam && (CATEGORIES as readonly string[]).includes(categoryParam)
       ? (categoryParam as Category)
@@ -58,6 +64,7 @@ export default function Resources() {
     setSearchParams(prev => {
       const next = new URLSearchParams(prev)
       q ? next.set('q', q) : next.delete('q')
+      next.delete('id')
       return next
     }, { replace: true })
   }
@@ -66,11 +73,15 @@ export default function Resources() {
     setSearchParams(prev => {
       const next = new URLSearchParams(prev)
       cat !== 'All' ? next.set('category', cat) : next.delete('category')
+      next.delete('id')
       return next
     }, { replace: true })
   }
 
   const filtered = useMemo(() => {
+    if (idParam) {
+      return resources.filter(r => extractAsin(r.href) === idParam)
+    }
     const q = search.toLowerCase()
     return resources.filter((r) => {
       const matchesCategory = activeCategory === 'All' || r.category === activeCategory
@@ -80,11 +91,13 @@ export default function Resources() {
         r.description.toLowerCase().includes(q)
       return matchesCategory && matchesSearch
     })
-  }, [search, activeCategory])
+  }, [search, activeCategory, idParam])
+
+  const isSharedView = Boolean(idParam && filtered.length > 0)
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Simple top bar */}
+      {/* Top bar */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a
@@ -147,7 +160,7 @@ export default function Resources() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors border ${
-                  activeCategory === cat
+                  activeCategory === cat && !idParam
                     ? 'bg-sage-500 text-white border-sage-500'
                     : 'bg-white text-gray-500 border-gray-200 hover:border-sage-300 hover:text-sage-600'
                 }`}
@@ -157,12 +170,21 @@ export default function Resources() {
             ))}
           </div>
 
+          {/* Shared item notice */}
+          {isSharedView && (
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <p className="text-sm text-gray-400">
+                Showing a therapist recommendation — use the search or categories above to browse the full library.
+              </p>
+            </div>
+          )}
+
           {/* Results */}
           {filtered.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((item, i) => (
+            <div className={`grid gap-6 ${isSharedView ? 'max-w-sm mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+              {filtered.map((item) => (
                 <a
-                  key={i}
+                  key={extractAsin(item.href) || item.name}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
