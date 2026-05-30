@@ -73,6 +73,7 @@ export default function Resources() {
     setSearchParams(prev => {
       const next = new URLSearchParams(prev)
       cat !== 'All' ? next.set('category', cat) : next.delete('category')
+      next.delete('q')
       next.delete('id')
       return next
     }, { replace: true })
