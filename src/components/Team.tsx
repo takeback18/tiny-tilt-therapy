@@ -20,7 +20,7 @@ const therapists: Therapist[] = [
     name: 'Jessie Kristof, PT, DPT, PCS',
     title: 'Pediatric Physical Therapist',
     image: '/Jessie.png',
-    objectPosition: 'center 15%',
+    objectPosition: 'center 27%',
     bio: 'Jessie Kristof is a Board-Certified Clinical Specialist in Pediatric Physical Therapy by the American Board of Physical Therapy Specialties (ABPTS). She graduated from the University of North Florida Doctor of Physical Therapy (DPT) program in 2016 and completed her pediatric physical therapy residency with Brooks Rehabilitation in 2018. She has PT clinical experience in NICU, acute care, school system, early intervention / in-home and outpatient settings.',
   },
   {

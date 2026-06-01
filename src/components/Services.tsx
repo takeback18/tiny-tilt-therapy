@@ -1,8 +1,4 @@
-import { FiHome, FiBook, FiClipboard, FiHeart } from 'react-icons/fi'
-import type { IconType } from 'react-icons'
-
 interface Service {
-  icon: IconType
   title: string
   description: string
   accent: 'sage' | 'sky'
@@ -12,7 +8,6 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: FiHome,
     title: 'In-Home Assessment',
     description:
       'We come to you. Our therapists evaluate your child in the comfort of your own home, observing their natural movement patterns and identifying areas of concern without the stress of a clinical setting.',
@@ -21,7 +16,6 @@ const services: Service[] = [
     imageAlt: 'Baby during in-home therapy assessment',
   },
   {
-    icon: FiBook,
     title: 'Parent Education & Guidance',
     description:
       "Knowledge is the first step. We walk parents through what torticollis is, why it happens, and — most importantly — what you can do every day to support your child's progress.",
@@ -30,7 +24,6 @@ const services: Service[] = [
     imageAlt: 'Parent learning about baby development',
   },
   {
-    icon: FiClipboard,
     title: 'Personalized Treatment Plans',
     description:
       "No two children are the same. We build individualized care plans based on your child's specific presentation, your family's schedule, and goals that are realistic and achievable.",
@@ -39,7 +32,6 @@ const services: Service[] = [
     imageAlt: 'Personalized baby care planning',
   },
   {
-    icon: FiHeart,
     title: 'Ongoing Support & Follow-Up',
     description:
       "Our relationship doesn't end after the first visit. We check in, track progress, adjust plans as your child grows, and stay available to answer questions along the way.",
@@ -69,8 +61,6 @@ export default function Services() {
 
       {/* Service rows */}
       {services.map((service, i) => {
-        const Icon = service.icon
-        const isSage = service.accent === 'sage'
         const imageRight = i % 2 === 0
 
         return (
@@ -112,13 +102,6 @@ export default function Services() {
                 }`}
               >
                 <div>
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${
-                      isSage ? 'bg-sage-100' : 'bg-sky-100'
-                    }`}
-                  >
-                    <Icon size={22} className={isSage ? 'text-sage-500' : 'text-sky-400'} />
-                  </div>
                   <h3 className="text-2xl font-semibold text-gray-800 mb-3">{service.title}</h3>
                   <p className="text-gray-600 leading-relaxed text-lg">{service.description}</p>
                 </div>
