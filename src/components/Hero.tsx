@@ -12,9 +12,9 @@ export default function Hero() {
             <img
               src="/Tiny Tilt No Kid.png"
               alt="Tiny Tilt In-Home Therapy"
-              className="h-52 w-auto mb-6 mx-auto block"
+              className="w-full max-w-sm h-auto -mb-10 mx-auto block"
             />
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 leading-tight mb-6">
+            <h1 className="text-lg sm:text-xl font-extrabold text-gray-800 leading-tight mb-6 text-center">
               Supporting{' '}
               <span className="text-sage-500">Symmetry, Strength,</span>
               {' '}and Development

@@ -35,7 +35,7 @@ export default function Navbar() {
             <img
               src="/logo-nav.png"
               alt="Tiny Tilt Therapy"
-              className="h-40 w-auto"
+              className="h-40 w-auto -mb-2"
             />
           </a>
 
