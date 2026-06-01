@@ -10,9 +10,9 @@ export default function Hero() {
           {/* Text */}
           <div className="order-2 lg:order-1 lg:pr-10">
             <img
-              src="/Tiny Tilt No Kid.png"
+              src="/tinytiltherologo.png"
               alt="Tiny Tilt In-Home Therapy"
-              className="w-full max-w-sm h-auto -mb-10 mx-auto block"
+              className="w-full max-w-xl h-auto -mb-12 mx-auto block"
             />
             <h1 className="text-lg sm:text-xl font-extrabold text-gray-800 leading-tight mb-6 text-center">
               Supporting{' '}
