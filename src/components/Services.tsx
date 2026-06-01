@@ -18,7 +18,7 @@ const services: Service[] = [
   {
     title: 'Parent Education & Guidance',
     description:
-      "Knowledge is the first step. We walk parents through what torticollis is, why it happens, and — most importantly — what you can do every day to support your child's progress.",
+      "Knowledge is the first step. We walk parents through what torticollis is, why it happens, and most importantly, what you can do every day to support your child's progress.",
     accent: 'sky',
     image: '/baby4.JPG',
     imageAlt: 'Parent learning about baby development',
@@ -54,7 +54,7 @@ export default function Services() {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">How We Help</h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
             From assessment to ongoing care, our therapists guide your family through every
-            step of the torticollis journey — at home, on your schedule.
+            step of the torticollis journey, at home, on your schedule.
           </p>
         </div>
       </div>

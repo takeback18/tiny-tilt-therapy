@@ -10,7 +10,7 @@ export default function Affiliates() {
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto leading-relaxed mb-8">
           We've hand-picked books, toys, and more to support families on the torticollis
-          journey — all personally recommended by our therapists.
+          journey, all personally recommended by our therapists.
         </p>
         <a
           href="/resources"

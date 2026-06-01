@@ -8,7 +8,7 @@ const torticollisSigns = [
 
 const plagiocephalySigns = [
   'Flat spot on one side or back of the head',
-  'Asymmetrical ears — one appearing further forward',
+  'Asymmetrical ears, one appearing further forward',
   'Forehead or cheek appearing more prominent on one side',
   'Head looks wider or more slanted from above',
   'Facial asymmetry that becomes more noticeable over time',

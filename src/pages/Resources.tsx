@@ -134,7 +134,7 @@ export default function Resources() {
             <p className="text-gray-600 max-w-xl mx-auto leading-relaxed">
               Hand-picked by our therapists to support your family's torticollis journey.{' '}
               <span className="text-gray-400 text-sm">
-                Some links may be affiliate links — at no extra cost to you.
+                Some links may be affiliate links, at no extra cost to you.
               </span>
             </p>
           </div>
@@ -175,7 +175,7 @@ export default function Resources() {
           {isSharedView && (
             <div className="flex items-center justify-center gap-3 mb-8">
               <p className="text-sm text-gray-400">
-                Showing a therapist recommendation — use the search or categories above to browse the full library.
+                Showing a therapist recommendation. Use the search or categories above to browse the full library.
               </p>
             </div>
           )}
