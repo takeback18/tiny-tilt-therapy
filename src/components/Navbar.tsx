@@ -1,27 +1,20 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { FaInstagram, FaTiktok } from 'react-icons/fa6'
 
 const navLinks = [
-  { label: 'Home',      anchor: 'home'     },
-  { label: 'About',     anchor: 'about'    },
-  { label: 'Services',  anchor: 'services' },
-  { label: 'Team',      anchor: 'team'     },
-  { label: 'Resources', href: '/resources' },
-  { label: 'Contact',   anchor: 'contact'  },
+  { label: 'Home',      to: '/#home'     },
+  { label: 'About',     to: '/#about'    },
+  { label: 'Services',  to: '/#services' },
+  { label: 'Team',      to: '/#team'     },
+  { label: 'Resources', to: '/resources' },
+  { label: 'Contact',   to: '/#contact'  },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const location = useLocation()
-  const prefix = location.pathname === '/' ? '' : '/'
-
-  function linkHref(link: typeof navLinks[number]) {
-    if ('href' in link) return link.href
-    return `${prefix}#${link.anchor}`
-  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -39,24 +32,24 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <a href={`${prefix}#home`} className="select-none flex-shrink-0">
+          <Link to="/#home" className="select-none flex-shrink-0">
             <img
               src="/logo-nav.png"
               alt="Tiny Tilt Therapy"
               className="h-40 w-auto -mb-2"
             />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={linkHref(link)}
+                to={link.to}
                 className="text-gray-600 hover:text-sage-500 text-sm font-medium transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
 
             {/* Social icons */}
@@ -97,14 +90,14 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-2">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={linkHref(link)}
+              to={link.to}
               className="text-gray-600 hover:text-sage-500 text-sm font-medium py-2 transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <div className="flex gap-4 pt-2 border-t border-gray-100 mt-2">
             <a
