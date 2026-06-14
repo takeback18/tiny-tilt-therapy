@@ -1,8 +1,9 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { FiSearch, FiExternalLink, FiArrowLeft } from 'react-icons/fi'
+import { FiSearch, FiExternalLink } from 'react-icons/fi'
 import { CATEGORIES, resources } from '../data/resources'
 import type { Category } from '../data/resources'
+import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const categoryColors: Record<Category, { badge: string; card: string }> = {
@@ -98,27 +99,7 @@ export default function Resources() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Top bar */}
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-40">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a
-            href="/"
-            className="flex items-center gap-2 text-sage-500 hover:text-sage-600 transition-colors text-sm font-medium"
-          >
-            <FiArrowLeft size={16} />
-            Back to Home
-          </a>
-          <a href="/" className="select-none flex-shrink-0">
-            <img src="/logo-nav.png" alt="Tiny Tilt Therapy" className="h-40 w-auto" />
-          </a>
-          <a
-            href="/#contact"
-            className="bg-sage-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-sage-600 transition-colors"
-          >
-            Book a Visit
-          </a>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="flex-1 py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

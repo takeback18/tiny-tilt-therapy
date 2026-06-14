@@ -2,17 +2,17 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-sky-50 pt-16 overflow-hidden"
+      className="relative bg-sky-50 pt-16 overflow-hidden lg:min-h-screen lg:flex lg:items-center"
     >
-<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center">
+<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10 lg:pt-24 lg:pb-16 w-full">
+        <div className="grid lg:grid-cols-2 gap-1 lg:gap-0 items-center">
 
           {/* Text */}
           <div className="order-2 lg:order-1 lg:pr-10">
             <img
               src="/tinytiltherologo.png"
               alt="Tiny Tilt In-Home Therapy"
-              className="w-full max-w-xl h-auto -mb-12 mx-auto block"
+              className="w-full max-w-xl h-auto -mb-12 -mt-10 lg:mt-0 mx-auto block"
             />
             <h1 className="text-lg sm:text-xl font-extrabold text-gray-800 leading-tight mb-6 text-center">
               Supporting{' '}

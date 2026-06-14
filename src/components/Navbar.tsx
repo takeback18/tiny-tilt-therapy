@@ -1,19 +1,27 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { FaInstagram, FaTiktok } from 'react-icons/fa6'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Team', href: '#team' },
+  { label: 'Home',      anchor: 'home'     },
+  { label: 'About',     anchor: 'about'    },
+  { label: 'Services',  anchor: 'services' },
+  { label: 'Team',      anchor: 'team'     },
   { label: 'Resources', href: '/resources' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact',   anchor: 'contact'  },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
+  const prefix = location.pathname === '/' ? '' : '/'
+
+  function linkHref(link: typeof navLinks[number]) {
+    if ('href' in link) return link.href
+    return `${prefix}#${link.anchor}`
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -31,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <a href="#home" className="select-none flex-shrink-0">
+          <a href={`${prefix}#home`} className="select-none flex-shrink-0">
             <img
               src="/logo-nav.png"
               alt="Tiny Tilt Therapy"
@@ -43,8 +51,8 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
+                key={link.label}
+                href={linkHref(link)}
                 className="text-gray-600 hover:text-sage-500 text-sm font-medium transition-colors"
               >
                 {link.label}
@@ -90,8 +98,8 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-2">
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.label}
+              href={linkHref(link)}
               className="text-gray-600 hover:text-sage-500 text-sm font-medium py-2 transition-colors"
               onClick={() => setMobileOpen(false)}
             >
