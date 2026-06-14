@@ -74,16 +74,16 @@ export default function Services() {
 
               {/* Image — always first in DOM so it appears on top on mobile */}
               <div
-                className={`relative flex-1 overflow-hidden -mx-4 sm:-mx-6 lg:mx-0 rounded-none h-72 sm:h-80 lg:h-auto lg:min-h-[22rem] ${
+                className={`-mx-4 sm:-mx-6 lg:mx-0 lg:flex-1 lg:relative lg:overflow-hidden lg:min-h-[22rem] ${
                   imageRight
-                    ? 'lg:order-2 lg:rounded-l-none lg:rounded-r-3xl'
-                    : 'lg:order-1 lg:rounded-r-none lg:rounded-l-3xl'
+                    ? 'lg:order-2 lg:rounded-r-3xl'
+                    : 'lg:order-1 lg:rounded-l-3xl'
                 }`}
               >
                 <img
                   src={service.image}
                   alt={service.imageAlt}
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="w-full h-72 sm:h-80 object-cover object-center lg:absolute lg:inset-0 lg:h-full"
                 />
                 {/* Gradient blends image edge into section background */}
                 {imageRight ? (

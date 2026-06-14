@@ -432,6 +432,7 @@ export const resources: Resource[] = [
     name: 'SmartNoggin NogginStik Light-Up Developmental Rattle',
     description: "A slender, easy-to-grip rattle with a color-changing light at the tip and a textured surface designed to capture a newborn's attention, ideal for encouraging babies to visually track across midline and actively turn their head toward a moving target during therapy-friendly play.",
     href: 'https://www.amazon.com/dp/B00BOQXWGS?coliid=ILW4YC78BZP4P&colid=3L7L1T2NRXJR9&psc=1&linkCode=ll2&tag=tinytilt-20&linkId=c499a710ab91497d614bb4f07e9d8f65&language=en_US&ref_=as_li_ss_tl',
+    image: '/noggin.jpg',
   },
   {
     category: 'Baby Toys',
@@ -458,7 +459,7 @@ export const resources: Resource[] = [
     name: 'Bright Starts Oball Easy Grasp Classic Ball',
     description: 'A lightweight, open-lattice ball with large finger-friendly holes that make it easy for even very young babies to grasp, squeeze, and hold from any direction, the simple, forgiving shape supports independent play and builds the hand strength needed for progressively more complex reaching and grasping skills.',
     href: 'https://www.amazon.com/dp/B00ZRD99C0?coliid=I4SEIH31SF1IB&colid=3L7L1T2NRXJR9&th=1&linkCode=ll2&tag=tinytilt-20&linkId=e08c36849e25173aeeb3349daef66625&language=en_US&ref_=as_li_ss_tl',
-    image: 'https://www.kids2.com/cdn/shop/files/27af224d36da99edd13d5ce5c98c287fd5aea97d.jpg?crop=center&height=3599&v=1775233825&width=3000',
+    image: '/oball.jpg',
   },
   {
     category: 'Nursing and Pumping',

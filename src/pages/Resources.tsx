@@ -189,26 +189,28 @@ export default function Resources() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`bg-white rounded-2xl p-6 border-2 shadow-sm transition-all group ${getCardStyle(item.category)}`}
+                  className={`bg-white rounded-2xl border-2 shadow-sm transition-all group overflow-hidden ${getCardStyle(item.category)}`}
                 >
                   {item.image && (
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-40 object-contain mb-4 rounded-lg"
+                      className="w-full h-48 object-contain bg-gray-50"
                     />
                   )}
-                  <div className="flex items-start justify-between mb-3">
-                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${getBadgeStyle(item.category)}`}>
-                      {item.category}
-                    </span>
-                    <FiExternalLink
-                      size={16}
-                      className="text-gray-300 group-hover:text-sage-500 transition-colors flex-shrink-0 mt-0.5"
-                    />
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-3">
+                      <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${getBadgeStyle(item.category)}`}>
+                        {item.category}
+                      </span>
+                      <FiExternalLink
+                        size={16}
+                        className="text-gray-300 group-hover:text-sage-500 transition-colors flex-shrink-0 mt-0.5"
+                      />
+                    </div>
+                    <h3 className="font-semibold text-gray-800 mb-2">{item.name}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
                   </div>
-                  <h3 className="font-semibold text-gray-800 mb-2">{item.name}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
                 </a>
               ))}
             </div>

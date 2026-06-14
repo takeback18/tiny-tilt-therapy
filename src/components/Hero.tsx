@@ -51,12 +51,12 @@ export default function Hero() {
           </div>
 
           {/* Image with left fade into background */}
-          <div className="order-1 lg:order-2 flex items-center justify-center">
-            <div className="relative w-64 sm:w-80 lg:w-full">
+          <div className="order-1 lg:order-2 -mx-4 sm:mx-0 flex items-center justify-center">
+            <div className="relative w-full sm:w-80 lg:w-full">
               <img
                 src="/baby2.jpg"
                 alt="Happy baby"
-                className="w-full h-72 sm:h-80 lg:h-[34rem] object-cover rounded-3xl lg:rounded-l-none lg:rounded-r-3xl"
+                className="w-full h-80 sm:h-80 lg:h-[34rem] object-cover [object-position:center_30%] lg:object-center sm:rounded-3xl lg:rounded-l-none lg:rounded-r-3xl"
               />
               {/* Fade from white background into image — desktop only */}
               <div className="hidden lg:block absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-sky-50 to-transparent pointer-events-none" />
