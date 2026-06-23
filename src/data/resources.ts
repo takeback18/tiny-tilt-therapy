@@ -538,7 +538,7 @@ export const resources: Resource[] = [
     name: 'Silverette The Original Silver Nursing Cups, Pure 925 Silver',
     description: 'Small cups made from pure 925 silver that sit over nipples between feedings, using silver\'s natural antimicrobial properties to soothe soreness, heal cracks, and prevent infection without creams or pads. Many nursing parents find them a game-changing alternative to lanolin when dealing with latch pain or healing tissue.',
     href: 'https://www.amazon.com/dp/B00D4MWKNQ?coliid=I209HDB4AAINW5&colid=45W55LIK8TFX&th=1&linkCode=ll2&tag=tinytilt-20&linkId=48df2f57b3766b4027b2a9180c51898a&language=en_US&ref_=as_li_ss_tl',
-    image: 'https://silveretteusa.com/cdn/shop/files/37c1b22d59e214d67f59cf957ad479377e3e253f_1.jpg?v=1764866452&width=1000',
+    image: '/silverette.jpg',
   },
   {
     category: 'Toddler Toys',
@@ -643,6 +643,7 @@ export const resources: Resource[] = [
     name: 'Tanjiae 4-Pack Stainless Steel Snack Containers for Kids, 8 oz',
     description: 'A set of four stackable 8-ounce stainless steel containers with food-grade silicone lids that snap open with one hand, making them ideal for sending daycare-ready snacks or therapy-day lunches without single-use plastic. Leak-resistant, dishwasher-safe, and sized for toddler portions, they simplify the daily routine for families managing packed schedules.',
     href: 'https://www.amazon.com/dp/B0F8Q8W7X9?tag=tinytilt-20',
+    image: '/snackcontainer.jpg',
   },
   {
     category: 'Baby Safety',
@@ -670,6 +671,7 @@ export const resources: Resource[] = [
     name: 'HELLOWOOD Montessori Wooden Shape Sorter Cube with 8 Rattling Shapes',
     description: 'A solid-wood shape sorter with eight geometric shapes, each enclosing a rattle, that teaches color recognition, shape matching, and cause-and-effect through the satisfying drop-and-shake sequence for children 12 months and up. Each successful insertion reinforces precise hand-eye coordination and the focused bilateral reaching that supports symmetrical motor development throughout early therapy.',
     href: 'https://www.amazon.com/dp/B0BCK85TTT?tag=tinytilt-20',
+    image: '/woodensorter.jpg',
   },
   {
     category: 'Toddler Toys',
@@ -711,7 +713,7 @@ export const resources: Resource[] = [
     name: 'Crayola Clicks Retractable Washable Markers, 10 Count',
     description: 'Ten washable cone-tip markers with click-in retractable caps that eliminate the need to replace lids, keeping both markers and small hands mess-free during art time from age 3 and up. The cone tip creates both broad and fine lines so children can explore pressure and control — an early step in developing the precise hand movements that support writing readiness.',
     href: 'https://www.amazon.com/dp/B08LQYT546?tag=tinytilt-20',
-    image: 'https://images.crayola.com/images/default-source/product-images/markers/58-8370_clicks-retractable-markers-10ct_pdp_main.jpg?sfvrsn=2fde6606_7',
+    image: '/retractmarkers.jpg',
   },
   {
     category: 'Toddler Toys',
