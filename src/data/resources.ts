@@ -462,6 +462,13 @@ export const resources: Resource[] = [
     image: '/oball.jpg',
   },
   {
+    category: 'Baby Toys',
+    name: 'PandaEar 2 Pack Tummy Time Water Mats for Babies',
+    description: 'Great for Tummy Time: Inflatable water mats help baby develop the muscles of neck, shoulder and back during tummy time exercise. Come with two distinct cartoon pattern which bring more fun to baby',
+    href: 'https://www.amazon.com/dp/B0BLV77T49?social_share=cm_sw_r_cso_em_apin_dp_17GNB1FD20K7AJ8Q6DJW&rsd=aZYBKocEbB5MLd8WwcOOKQ8zlTZooohvEedz3%2FBrN3p0tg%2FkBYEJ3fgsIFkHB%2BY0crKGZa%2Barys0F%2Frdhosh8FbuoJSxn0iKfl%2BF5y9WExvWcdGk9eNp&edk=AQIDAHi1lw%2FM8UbbSMD9ScOOFEmBMHMthHeEhqDaQYPJUAX3jQF1Z1vZPZIb9JOb7MjcfLwsAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMryk5ntDaKEnUZIXlAgEQgDuneGZ8jV2fuRNwvEkoSxL52Zv6PeKz%2FjjOnQXmN2iF6vq888QXTloHSCzBLSi9RgFilrP7Zcnd0f5BGg%3D%3D&linkCode=ll2&tag=tinytilt-20&linkId=c0aaff42698ccb112b94233f81f1fdd7&language=en_US&ref_=as_li_ss_tl',
+    image: '/watermats.jpg',
+  },
+  {
     category: 'Nursing and Pumping',
     name: 'InchBug Orbit Labels Silicone Name Bands, 4-Pack',
     description: 'Stretchy, waterproof silicone bands that slip onto bottles, sippy cups, and containers to display your child\'s name, no writing, stickers, or tape needed. Dishwasher-safe and reusable, they\'re a simple way to keep feeding supplies organized at daycare or therapy appointments.',
