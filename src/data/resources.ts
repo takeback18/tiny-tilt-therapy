@@ -675,6 +675,13 @@ export const resources: Resource[] = [
   },
   {
     category: 'Toddler Toys',
+    name: 'Melissa & Doug Add & Subtract Abacus Educational Toy with 55 Colorful Beads',
+    description: 'A wooden abacus with 55 colorful beads and two interchangeable double-sided activity boards that guide children through addition, subtraction, and color matching exercises from age 3. The hands-on bead-sliding format develops fine motor precision, bilateral hand use, and early numeracy skills through the kind of purposeful, structured play that fits naturally into a daily therapy-supportive routine.',
+    href: 'https://www.amazon.com/dp/B09YRQVWSN?linkCode=ll2&tag=tinytilt-20&linkId=a31b2716e711693c1119e0a55db3b289&language=en_US&ref_=as_li_ss_tl',
+    image: 'https://www.melissaanddoug.com/cdn/shop/products/Add-Subtract-Abacus-009272-1-Assembled-Decorated.jpg?v=1664890587',
+  },
+  {
+    category: 'Toddler Toys',
     name: 'HABA Fun with Sounds Wooden Eggs — 5 Acoustic Sounds, Made in Germany',
     description: 'Five solid beechwood eggs, each concealing a distinct acoustic sound — from rattling to chiming — that toddlers discover through shaking and listening from age 2. Made in Germany from sustainably sourced wood with non-toxic finishes, the palm-sized eggs develop grip strength, auditory discrimination, and cause-and-effect reasoning through endlessly repeatable open-ended play.',
     href: 'https://www.amazon.com/dp/B00BF3D666?tag=tinytilt-20',

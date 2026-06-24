@@ -53,4 +53,5 @@ export const primeDeals: Record<string, PrimeDeal> = {
   'B08V21RXFY': { salePrice: '$39.94',  wasPrice: '$46.99',  discount: '15% off' },
   'B0BC8Y1W77': { salePrice: '$27.53',  wasPrice: '$34.99',  discount: '21% off' },
   'B0BY5WT4HX': { salePrice: '$15.04',  wasPrice: '$22.00',  discount: '32% off' },
+  'B09YRQVWSN': { salePrice: '$18.99',  wasPrice: '$22.49',  discount: '16% off' },
 }
