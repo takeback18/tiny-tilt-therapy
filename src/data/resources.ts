@@ -674,11 +674,11 @@ export const resources: Resource[] = [
     image: '/woodensorter.jpg',
   },
   {
-    category: 'Toddler Toys',
-    name: 'Melissa & Doug Add & Subtract Abacus Educational Toy with 55 Colorful Beads',
-    description: 'A wooden abacus with 55 colorful beads and two interchangeable double-sided activity boards that guide children through addition, subtraction, and color matching exercises from age 3. The hands-on bead-sliding format develops fine motor precision, bilateral hand use, and early numeracy skills through the kind of purposeful, structured play that fits naturally into a daily therapy-supportive routine.',
+    category: 'Baby Toys',
+    name: 'Fat Brain Toys SpinAgain Stacking & Spinning Toy, 12 Months+',
+    description: 'Six vibrant dual-colored discs drop onto a threaded corkscrew pole and spin smoothly down to settle on a reversible wobble or flat base, delivering instant cause-and-effect feedback for babies 12 months and up. The satisfying spin rewards each drop with a mesmerizing twirl, encouraging repeated reaching, releasing, and visual tracking — movements that naturally support the bilateral coordination and head-turning goals central to torticollis therapy.',
     href: 'https://www.amazon.com/dp/B09YRQVWSN?linkCode=ll2&tag=tinytilt-20&linkId=a31b2716e711693c1119e0a55db3b289&language=en_US&ref_=as_li_ss_tl',
-    image: 'https://www.melissaanddoug.com/cdn/shop/products/Add-Subtract-Abacus-009272-1-Assembled-Decorated.jpg?v=1664890587',
+    image: 'https://babys1st.com/cdn/shop/products/fat-brain-toys-toys-1-fat-brain-toys-spinagain-18580195147926.jpg?v=1607334841&width=1445',
   },
   {
     category: 'Toddler Toys',
