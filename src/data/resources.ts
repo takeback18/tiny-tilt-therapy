@@ -514,6 +514,20 @@ export const resources: Resource[] = [
   },
   {
     category: 'Nursing and Pumping',
+    name: 'Boppy Nursing Pillow - Original Support',
+    description: 'A firm, ergonomic U-shaped pillow with a higher lift that brings baby closer for a better latch during breast or bottle feeding, while reducing back, neck, and shoulder strain for parents. Filled with hypoallergenic recycled fiber and finished with a water-repellent, machine-washable cover for easy cleanup.',
+    href: 'https://www.amazon.com/dp/B0DJRQRGSK?linkCode=ll2&tag=tinytilt-20&linkId=6c9df483b512b460ded7c8df04430f6e&language=en_US&ref_=as_li_ss_tl',
+    image: 'https://www.boppy.com/cdn/shop/files/boppy-nursing-pillow00066004210490-4206272.webp?v=1776861492',
+  },
+  {
+    category: 'Nursing and Pumping',
+    name: 'x-vesolje Nursing Pillow with Removable Cover',
+    description: 'A budget-friendly C-shaped nursing pillow with adjustable polyester fill and a removable, machine-washable 100% cotton cover to keep it fresh between feedings. A built-in side pocket for bottles or burp cloths and a carry handle make it easy to bring along to appointments or use for supported tummy time as baby grows.',
+    href: 'https://www.amazon.com/dp/B0DBL1X6GQ?linkCode=ll2&tag=tinytilt-20&linkId=e23b4425bef907d67c1004ec59c4cc7b&language=en_US&ref_=as_li_ss_tl',
+    image: 'https://m.media-amazon.com/images/I/71-AosVnkiL._SL1500_.jpg',
+  },
+  {
+    category: 'Nursing and Pumping',
     name: 'BabyBuddha Breast Pump 2.0 Portable Hospital-Grade Pump',
     description: 'A hospital-grade portable pump in a remarkably compact body, offering 21 suction levels and a dedicated soft stimulation mode that mimics a newborn\'s natural nursing rhythm to encourage letdown. Its small size and rechargeable battery make it easy to bring to therapy appointments or use during tummy time sessions with your baby.',
     href: 'https://www.amazon.com/dp/B0DZQCJV3W?coliid=IAWXMYG0LK1OJ&colid=45W55LIK8TFX&th=1&linkCode=ll2&tag=tinytilt-20&linkId=50d8b3ecdc70233e22e85cd0d6f8b141&language=en_US&ref_=as_li_ss_tl',

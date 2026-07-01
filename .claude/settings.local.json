@@ -136,7 +136,15 @@
       "WebFetch(domain:poshmark.com)",
       "WebFetch(domain:ibspot.com)",
       "WebFetch(domain:gistgear.com)",
-      "WebFetch(domain:snapklik.com)"
+      "WebFetch(domain:snapklik.com)",
+      "WebFetch(domain:kiddocove.com)",
+      "WebFetch(domain:camelcamelcamel.com)",
+      "WebFetch(domain:www.bing.com)",
+      "WebFetch(domain:www.naturalresources-sf.com)",
+      "WebFetch(domain:www.boppy.com)",
+      "WebFetch(domain:www.amazon.in)",
+      "WebFetch(domain:r.jina.ai)",
+      "WebFetch(domain:m.media-amazon.com)"
     ]
   }
 }

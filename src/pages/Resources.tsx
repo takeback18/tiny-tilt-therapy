@@ -1,9 +1,8 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { FiSearch, FiExternalLink, FiZap } from 'react-icons/fi'
+import { FiSearch, FiExternalLink } from 'react-icons/fi'
 import { CATEGORIES, resources } from '../data/resources'
 import type { Category } from '../data/resources'
-import { primeDeals } from '../data/primeDeals'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -56,7 +55,6 @@ export default function Resources() {
   const search = searchParams.get('q') ?? ''
   const categoryParam = searchParams.get('category')
   const idParam = searchParams.get('id') ?? ''
-  const primeDayParam = searchParams.get('prime') === '1'
 
   const activeCategory: Category | 'All' =
     categoryParam && (CATEGORIES as readonly string[]).includes(categoryParam)
@@ -68,7 +66,6 @@ export default function Resources() {
       const next = new URLSearchParams(prev)
       q ? next.set('q', q) : next.delete('q')
       next.delete('id')
-      next.delete('prime')
       return next
     }, { replace: true })
   }
@@ -79,22 +76,6 @@ export default function Resources() {
       cat !== 'All' ? next.set('category', cat) : next.delete('category')
       next.delete('q')
       next.delete('id')
-      next.delete('prime')
-      return next
-    }, { replace: true })
-  }
-
-  function togglePrimeDay() {
-    setSearchParams(prev => {
-      const next = new URLSearchParams(prev)
-      if (next.get('prime') === '1') {
-        next.delete('prime')
-      } else {
-        next.set('prime', '1')
-        next.delete('category')
-        next.delete('q')
-        next.delete('id')
-      }
       return next
     }, { replace: true })
   }
@@ -105,7 +86,6 @@ export default function Resources() {
     }
     const q = search.toLowerCase()
     return resources.filter((r) => {
-      if (primeDayParam && !primeDeals[extractAsin(r.href)]) return false
       const matchesCategory = activeCategory === 'All' || r.category === activeCategory
       const matchesSearch =
         !q ||
@@ -113,7 +93,7 @@ export default function Resources() {
         r.description.toLowerCase().includes(q)
       return matchesCategory && matchesSearch
     })
-  }, [search, activeCategory, idParam, primeDayParam])
+  }, [search, activeCategory, idParam])
 
   const isSharedView = Boolean(idParam && filtered.length > 0)
 
@@ -155,21 +135,6 @@ export default function Resources() {
             />
           </div>
 
-          {/* Prime Day filter */}
-          <div className="flex justify-center mb-4">
-            <button
-              onClick={togglePrimeDay}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors border-2 flex items-center gap-2 ${
-                primeDayParam
-                  ? 'bg-amber-500 text-white border-amber-500 shadow-md'
-                  : 'bg-white text-amber-600 border-amber-400 hover:bg-amber-50'
-              }`}
-            >
-              <FiZap size={14} />
-              Prime Day Sales
-            </button>
-          </div>
-
           {/* Category filter pills */}
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {(['All', ...CATEGORIES] as const).map((cat) => (
@@ -177,7 +142,7 @@ export default function Resources() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors border ${
-                  activeCategory === cat && !idParam && !primeDayParam
+                  activeCategory === cat && !idParam
                     ? 'bg-sage-500 text-white border-sage-500'
                     : 'bg-white text-gray-500 border-gray-200 hover:border-sage-300 hover:text-sage-600'
                 }`}
@@ -186,18 +151,6 @@ export default function Resources() {
               </button>
             ))}
           </div>
-
-          {/* Prime Day notice */}
-          {primeDayParam && (
-            <div className="flex items-center justify-center mb-8">
-              <div className="bg-amber-50 border border-amber-200 rounded-full px-5 py-2 flex items-center gap-2">
-                <FiZap size={14} className="text-amber-500" />
-                <p className="text-sm text-amber-700 font-medium">
-                  Showing {filtered.length} Prime Day deal{filtered.length !== 1 ? 's' : ''} — prices may change after the sale ends
-                </p>
-              </div>
-            </div>
-          )}
 
           {/* Shared item notice */}
           {isSharedView && (
@@ -213,27 +166,14 @@ export default function Resources() {
             <div className={`grid gap-6 ${isSharedView ? 'max-w-sm mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
               {filtered.map((item) => {
                 const asin = extractAsin(item.href)
-                const deal = primeDeals[asin]
                 return (
                   <a
                     key={asin || item.name}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`bg-white rounded-2xl border-2 shadow-sm transition-all group overflow-hidden ${deal ? 'border-amber-300 hover:border-amber-400' : getCardStyle(item.category)}`}
+                    className={`bg-white rounded-2xl border-2 shadow-sm transition-all group overflow-hidden ${getCardStyle(item.category)}`}
                   >
-                    {deal && (
-                      <div className="bg-amber-500 text-white px-4 py-2 flex items-center justify-between text-xs font-semibold">
-                        <span className="flex items-center gap-1.5">
-                          <FiZap size={12} />
-                          Prime Day Deal — {deal.discount}
-                        </span>
-                        <span>
-                          {deal.salePrice}{' '}
-                          <span className="line-through font-normal opacity-70">{deal.wasPrice}</span>
-                        </span>
-                      </div>
-                    )}
                     {item.image && (
                       <img
                         src={item.image}
