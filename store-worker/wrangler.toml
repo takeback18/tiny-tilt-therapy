@@ -11,7 +11,7 @@ API_URL = "https://api.tinytilttherapy.com"
 [[d1_databases]]
 binding = "DB"
 database_name = "tiny-tilt-store"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "6df27de5-3b84-4ccb-8332-4d8b3ea9d498"
 
 [[r2_buckets]]
 binding = "PDFS"
