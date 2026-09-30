@@ -1,3 +1,5 @@
+import { BOOKING_URL } from '../siteLinks'
+
 const torticollisSigns = [
   'Head consistently tilted to one side',
   'Difficulty turning head fully in one direction',
@@ -63,7 +65,9 @@ export default function WhatIsTorticollis() {
               ))}
             </ul>
             <a
-              href="#contact"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-auto inline-block self-start bg-sage-500 text-white px-5 py-2.5 rounded-full font-medium hover:bg-sage-600 transition-colors text-sm"
             >
               Schedule a Consultation
@@ -89,7 +93,9 @@ export default function WhatIsTorticollis() {
               ))}
             </ul>
             <a
-              href="#contact"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-auto inline-block self-start bg-sky-400 text-white px-5 py-2.5 rounded-full font-medium hover:bg-sky-500 transition-colors text-sm"
             >
               Schedule a Consultation

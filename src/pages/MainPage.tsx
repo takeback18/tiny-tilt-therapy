@@ -5,6 +5,7 @@ import Hero from '../components/Hero'
 import WhatIsTorticollis from '../components/WhatIsTorticollis'
 import Services from '../components/Services'
 import Team from '../components/Team'
+import BookConsultation from '../components/BookConsultation'
 import Affiliates from '../components/Affiliates'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -26,6 +27,7 @@ export default function MainPage() {
         <WhatIsTorticollis />
         <Services />
         <Team />
+        <BookConsultation />
         <Affiliates />
         <Contact />
       </main>

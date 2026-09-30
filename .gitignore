@@ -14,6 +14,11 @@ dist-ssr
 
 # Local env (API keys)
 .env
+.dev.vars
+.wrangler
+
+# Purchasable PDFs (stored in R2, never committed)
+pdfs/
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +30,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json

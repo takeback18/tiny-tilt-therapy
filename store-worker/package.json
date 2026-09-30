@@ -1,0 +1,22 @@
+{
+  "name": "tiny-tilt-store",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "stripe:listen": "stripe listen --events checkout.session.completed --forward-to localhost:8787/webhooks/stripe",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute tiny-tilt-store --local --file=./schema.sql",
+    "db:migrate:remote": "wrangler d1 execute tiny-tilt-store --remote --file=./schema.sql",
+    "products:local": "wrangler r2 object put tiny-tilt-pdfs/guides/torticollis-hep-left.pdf --file=./pdfs/torticollis-hep-left.pdf --content-type=application/pdf --local && wrangler r2 object put tiny-tilt-pdfs/guides/torticollis-hep-right.pdf --file=./pdfs/torticollis-hep-right.pdf --content-type=application/pdf --local && wrangler d1 execute tiny-tilt-store --file=./products.sql --local",
+    "products:remote": "wrangler r2 object put tiny-tilt-pdfs/guides/torticollis-hep-left.pdf --file=./pdfs/torticollis-hep-left.pdf --content-type=application/pdf --remote && wrangler r2 object put tiny-tilt-pdfs/guides/torticollis-hep-right.pdf --file=./pdfs/torticollis-hep-right.pdf --content-type=application/pdf --remote && wrangler d1 execute tiny-tilt-store --file=./products.sql --remote"
+  },
+  "dependencies": {
+    "stripe": "^18.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260825.0",
+    "typescript": "^5.4.5",
+    "wrangler": "^4.95.0"
+  }
+}
