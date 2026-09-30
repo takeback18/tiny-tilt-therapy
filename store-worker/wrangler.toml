@@ -17,9 +17,11 @@ database_id = "REPLACE_WITH_D1_DATABASE_ID"
 binding = "PDFS"
 bucket_name = "tiny-tilt-pdfs"
 
+# Custom domain: Cloudflare creates the DNS record and HTTPS certificate for
+# api.tinytilttherapy.com automatically on deploy.
 [[routes]]
-pattern = "api.tinytilttherapy.com/*"
-zone_name = "tinytilttherapy.com"
+pattern = "api.tinytilttherapy.com"
+custom_domain = true
 
 [observability.logs]
 enabled = true

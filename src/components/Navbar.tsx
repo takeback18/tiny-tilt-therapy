@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { FaInstagram, FaTiktok } from 'react-icons/fa6'
+import { isStoreUnlocked } from '../storeConfig'
 
-const navLinks = [
+const allNavLinks = [
   { label: 'Home',      to: '/#home'     },
   { label: 'About',     to: '/#about'    },
   { label: 'Services',  to: '/#services' },
@@ -15,6 +16,8 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  // Hide the Store link until the store is open (or unlocked in this browser).
+  const navLinks = isStoreUnlocked() ? allNavLinks : allNavLinks.filter((l) => l.to !== '/store')
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {

@@ -6,7 +6,7 @@ import { sendDeliveryEmail, type DeliveryItem } from "./email";
 // their email), the webhook records the purchase and emails the files, and
 // each purchase gets a random download token that the emailed links use.
 
-const ALLOWED_ORIGINS = ["https://tinytilttherapy.com", "http://localhost:5173"];
+const ALLOWED_ORIGINS = ["https://tinytilttherapy.com", "https://www.tinytilttherapy.com", "http://localhost:5173"];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function corsHeaders(request: Request): Record<string, string> {
