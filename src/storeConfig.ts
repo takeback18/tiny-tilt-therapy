@@ -16,7 +16,7 @@ export const TURNSTILE_SITE_KEY: string = isLocalDev
 // ---- Coming-soon gate ----
 // While false, /store and /downloads show a "coming soon" screen and the Store
 // link is hidden from the nav. Set to true at launch to open the store to everyone.
-export const STORE_OPEN = false
+export const STORE_OPEN = true
 
 // SHA-256 of the preview password, so the public repo never contains the password
 // itself. This is a soft gate for testing, not real security.
