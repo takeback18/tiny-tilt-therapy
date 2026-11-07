@@ -4,6 +4,7 @@ import MainPage from './pages/MainPage'
 import Resources from './pages/Resources'
 import Store from './pages/Store'
 import Downloads from './pages/Downloads'
+import GiftGuide from './pages/GiftGuide'
 import StoreGate from './components/StoreGate'
 
 function ScrollToTop() {
@@ -19,6 +20,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/gift-guide" element={<GiftGuide />} />
         <Route path="/store" element={<StoreGate><Store /></StoreGate>} />
         <Route path="/downloads" element={<StoreGate><Downloads /></StoreGate>} />
       </Routes>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { FaInstagram, FaTiktok } from 'react-icons/fa6'
 import { isStoreUnlocked } from '../storeConfig'
+import { GIFT_GUIDE_ON } from '../giftGuides'
 
 const allNavLinks = [
   { label: 'Home',      to: '/#home'     },
@@ -11,13 +12,19 @@ const allNavLinks = [
   { label: 'Team',      to: '/#team'     },
   { label: 'Resources', to: '/resources' },
   { label: 'Store',     to: '/store'     },
+  { label: 'Gift Guide', to: '/gift-guide' },
   { label: 'Contact',   to: '/#contact'  },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   // Hide the Store link until the store is open (or unlocked in this browser).
-  const navLinks = isStoreUnlocked() ? allNavLinks : allNavLinks.filter((l) => l.to !== '/store')
+  // Hide the Gift Guide link when it's switched off after the holidays.
+  const navLinks = allNavLinks.filter(
+    (l) =>
+      (l.to !== '/store' || isStoreUnlocked()) &&
+      (l.to !== '/gift-guide' || GIFT_GUIDE_ON),
+  )
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -45,12 +52,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.to}
-                className="text-gray-600 hover:text-sage-500 text-sm font-medium transition-colors"
+                className="text-gray-600 hover:text-sage-500 text-sm font-medium whitespace-nowrap transition-colors"
               >
                 {link.label}
               </Link>
@@ -81,7 +88,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:text-sage-500 transition-colors"
+            className="lg:hidden p-2 text-gray-600 hover:text-sage-500 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -92,7 +99,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-2">
+        <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-2">
           {navLinks.map((link) => (
             <Link
               key={link.label}

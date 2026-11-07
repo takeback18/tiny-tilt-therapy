@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import GiftGuideCallout from '../components/GiftGuideCallout'
 import WhatIsTorticollis from '../components/WhatIsTorticollis'
 import Services from '../components/Services'
 import Team from '../components/Team'
@@ -24,6 +25,7 @@ export default function MainPage() {
       <Navbar />
       <main>
         <Hero />
+        <GiftGuideCallout />
         <WhatIsTorticollis />
         <Services />
         <Team />
