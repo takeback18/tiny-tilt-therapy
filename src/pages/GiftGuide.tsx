@@ -40,7 +40,7 @@ export default function GiftGuide() {
                 target="_blank"
                 rel="sponsored noopener noreferrer"
                 aria-label={`${guide.name} gift guide (opens Amazon in a new tab)`}
-                className="group block bg-white rounded-2xl border-2 border-warm-200 shadow-sm overflow-hidden transition-all hover:border-sage-200 hover:shadow-md hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sage-200"
+                className="group flex flex-col bg-white rounded-2xl border-2 border-warm-200 shadow-sm overflow-hidden transition-all hover:border-sage-200 hover:shadow-md hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sage-200"
               >
                 <img
                   src={guide.image}
@@ -48,6 +48,11 @@ export default function GiftGuide() {
                   loading="lazy"
                   className="w-full aspect-[3/4] object-contain bg-white"
                 />
+                {guide.description && (
+                  <p className="px-3 pb-4 pt-1 sm:px-4 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    {guide.description}
+                  </p>
+                )}
               </a>
             ))}
           </div>
