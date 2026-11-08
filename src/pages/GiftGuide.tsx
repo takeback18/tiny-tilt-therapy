@@ -32,7 +32,7 @@ export default function GiftGuide() {
           </div>
 
           {/* Guides */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-sm sm:max-w-none mx-auto">
             {giftGuides.map((guide) => (
               <a
                 key={guide.name}
@@ -49,7 +49,7 @@ export default function GiftGuide() {
                   className="w-full aspect-[3/4] object-contain bg-white"
                 />
                 {guide.description && (
-                  <p className="px-3 pb-4 pt-1 sm:px-4 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  <p className="px-4 pb-4 pt-1 text-sm text-gray-600 leading-relaxed">
                     {guide.description}
                   </p>
                 )}
