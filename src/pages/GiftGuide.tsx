@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { giftGuides } from '../giftGuides'
+import GiftGuideShop from '../components/GiftGuideShop'
 import { BOOKING_URL } from '../siteLinks'
 
 export default function GiftGuide() {
@@ -71,6 +72,8 @@ export default function GiftGuide() {
               )
             })}
           </div>
+
+          <GiftGuideShop />
 
           {/* Booking nudge */}
           <div className="mt-16 bg-sky-50 rounded-3xl px-6 py-10 text-center">
