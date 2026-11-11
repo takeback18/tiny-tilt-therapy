@@ -125,10 +125,11 @@ export default function GiftGuideDetail() {
                   {guide.description}
                 </p>
               )}
-              <p className="text-gray-400 text-sm mt-4 max-w-xl mx-auto md:mx-0">
-                We may earn a commission from links on this page, at no extra cost to you. As an
-                Amazon Associate, Tiny Tilt Therapy earns from qualifying purchases.
-              </p>
+              {guide.stage && (
+                <p className="text-sage-700 mt-3">
+                  <span className="font-semibold">Developmental stage:</span> {guide.stage}
+                </p>
+              )}
             </div>
           </div>
 
@@ -157,6 +158,11 @@ export default function GiftGuideDetail() {
               Book a Consultation →
             </a>
           </div>
+
+          <p className="text-gray-400 text-sm text-center mt-10 max-w-2xl mx-auto">
+            We may earn a commission from links on this page, at no extra cost to you. As an
+            Amazon Associate, Tiny Tilt Therapy earns from qualifying purchases.
+          </p>
         </div>
       </main>
 

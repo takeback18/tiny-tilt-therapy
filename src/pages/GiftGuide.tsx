@@ -19,18 +19,21 @@ export default function GiftGuide() {
               Holiday Gift Guide
             </span>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
-              Gifts for Every Stage
+              The Tiny Tilt Gift Guides are here!
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Shopping for a little one this season? Our pediatric physical therapists picked
-              toys and gear for each stage of movement, from tummy time to preschool, so your
-              gift supports the skills they're working on right now. Tap a guide to see the
-              full list.
-            </p>
-            <p className="text-gray-400 text-sm mt-3">
-              We may earn a commission from links on this page, at no extra cost to you. As an
-              Amazon Associate, Tiny Tilt Therapy earns from qualifying purchases.
-            </p>
+            <div className="text-gray-600 max-w-2xl mx-auto leading-relaxed space-y-3">
+              <p>
+                As pediatric physical therapists, we’ve put together gift guides organized around
+                developmental milestones rather than age. Whether your little one is working on
+                tummy time, rolling, sitting, crawling, cruising, walking, or mastering those
+                toddler and preschool skills, we’ve rounded up some of our favorite toys and
+                products to support each stage.
+              </p>
+              <p>
+                Every child develops at their own pace, so find the stage that best fits your
+                little one and explore our favorite picks for learning through play.
+              </p>
+            </div>
           </div>
 
           {/* Guides */}
@@ -47,10 +50,16 @@ export default function GiftGuide() {
                     className="w-full aspect-[3/4] object-contain bg-white"
                   />
                   {guide.description && (
-                    <p className="px-4 pb-4 pt-1 text-sm text-gray-600 leading-relaxed">
+                    <p className="px-4 pt-1 text-sm text-gray-600 leading-relaxed">
                       {guide.description}
                     </p>
                   )}
+                  {guide.stage && (
+                    <p className="px-4 pt-3 mt-auto text-sm text-sage-700">
+                      <span className="font-semibold">Developmental stage:</span> {guide.stage}
+                    </p>
+                  )}
+                  <div className="pb-4" />
                 </>
               )
               // Guides with their own item list open a page on our site; the rest go to Amazon.
@@ -93,6 +102,11 @@ export default function GiftGuide() {
               Book a Consultation →
             </a>
           </div>
+
+          <p className="text-gray-400 text-sm text-center mt-10 max-w-2xl mx-auto">
+            We may earn a commission from links on this page, at no extra cost to you. As an
+            Amazon Associate, Tiny Tilt Therapy earns from qualifying purchases.
+          </p>
         </div>
       </main>
 

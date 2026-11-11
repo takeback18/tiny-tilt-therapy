@@ -21,8 +21,9 @@ export interface GiftGuide {
   image: string
   // The Amazon storefront list. Used for the tile when the guide has no `items`.
   href: string
-  // Short blurb shown under the image. Copied from the Amazon list; update both if it changes.
+  // Blurb shown under the image, and the developmental stage line shown below it.
   description?: string
+  stage?: string
   // If set, the tile opens the guide's own page on our site listing these items
   // (each with its own link) instead of going to the Amazon list.
   items?: GiftItem[]
@@ -35,15 +36,17 @@ export const giftGuides: GiftGuide[] = [
     name: 'Tummy Time Warriors',
     image: '/gift-guides/tummy-time-warriors.webp',
     description:
-      'Little muscles, big milestones! Our pediatric PT picks for making tummy time more fun while encouraging early head control, neck strength, and upper body development.',
+      'Tummy time is where the adventure begins! Our pediatric PT-inspired picks encourage babies to lift their heads, look around, track toys, and start building the strength needed for all those exciting first milestones. From high-contrast toys to tummy time essentials, these gifts make floor play a little more fun.',
+    stage: 'Newborn to approximately 4 months',
     href: 'https://www.amazon.com/shop/tinytilt/list/2PZ63PF8KORZZ?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=faef162b-8665-4613-9aa3-2a11bb22a370',
   },
   {
     slug: 'rockin-rollers',
-    name: "Rockin' Rollers",
+    name: 'Rockin’ Rollers',
     image: '/gift-guides/rockin-rollers.webp',
     description:
-      'Ready, set, roll! These pediatric PT-picked toys encourage reaching, rotation, and rolling as your little one learns to explore the world from every angle.',
+      'Ready, set, roll! This is the stage when babies are discovering how to move their bodies, reach for toys, and roll in both directions. Our favorite picks encourage reaching, trunk rotation, weight shifting, and plenty of floor play as little ones work toward becoming expert rollers.',
+    stage: 'Approximately 3–7 months',
     href: 'https://www.amazon.com/shop/tinytilt/list/3BRWFQNJ1KOP6?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=9abf9c91-aad3-451c-8c2a-e3a3439a15bd',
   },
   {
@@ -51,7 +54,8 @@ export const giftGuides: GiftGuide[] = [
     name: 'Sitting Superstars',
     image: '/gift-guides/sitting-superstars.webp',
     description:
-      'Sitting opens up a whole new world of play! These pediatric PT favorites encourage balance, core strength, reaching, and coordination as your little one learns to sit and play independently.',
+      'A whole new world opens up when babies start sitting! Our pediatric PT-inspired picks encourage balance, core control, reaching, trunk rotation, and coordination as little ones learn to sit and explore their surroundings. From early sitting practice to independent play, these toys help little sitters build confidence while having fun.',
+    stage: 'Approximately 5–9 months',
     href: 'https://www.amazon.com/shop/tinytilt/list/224AJZKXJP8X0?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=cdeab262-50db-4236-b1bb-6241d33c6556',
   },
   {
@@ -59,7 +63,8 @@ export const giftGuides: GiftGuide[] = [
     name: 'Crawling Cuties',
     image: '/gift-guides/crawling-cuties.webp',
     description:
-      'On the move! Our favorite pediatric PT-picked toys encourage weight shifting, strength, coordination, and exploration as your little one learns to crawl and discover new places.',
+      'On the move! Whether your little one is rocking on hands and knees, learning to crawl, or figuring out how to get from one place to another, this stage is full of exciting discoveries. Our favorite picks encourage weight bearing through the arms, core strength, coordination, motor planning, and exploration.',
+    stage: 'Approximately 7–12 months',
     href: 'https://www.amazon.com/shop/tinytilt/list/16Z2A98YVDGUE?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=b5b13f9c-0393-4626-8974-c18acf6e8ea8',
   },
   {
@@ -67,7 +72,8 @@ export const giftGuides: GiftGuide[] = [
     name: 'Little Cruisers',
     image: '/gift-guides/little-cruisers.webp',
     description:
-      'Up, up, and away! These pediatric PT favorites encourage pulling to stand, standing balance, cruising, and weight shifting as your little one gets ready to take those first steps.',
+      'Pulling up, standing, and cruising along the furniture! Little ones are finding their feet and discovering all the ways they can move upright. Our pediatric PT-inspired picks encourage standing balance, weight shifting, coordination, lower-body strength, and those first steps toward independent walking.',
+    stage: 'Approximately 9–15 months',
     href: 'https://www.amazon.com/shop/tinytilt/list/16K7IS4EXK5OR?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=7e2286bc-6877-4a3d-b517-0993761e2030',
     items: [
       {
@@ -127,7 +133,8 @@ export const giftGuides: GiftGuide[] = [
     name: 'Wobbly Walkers',
     image: '/gift-guides/wobbly-walkers.webp',
     description:
-      'Those first steps are a big deal! Our pediatric PT-picked toys encourage balance, coordination, and confidence as your little one learns to walk and explore on two feet.',
+      'Those first independent steps are just the beginning! From taking a few wobbly steps to becoming more confident on two feet, little walkers are constantly practicing their balance and coordination. Our favorite picks encourage walking, climbing, squatting, navigating obstacles, and exploring the world on foot.',
+    stage: 'Approximately 12–18 months',
     href: 'https://www.amazon.com/shop/tinytilt/list/3GVUNTHWBQNLD?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=1caafc50-e0e0-4f45-bb94-c4c78be8fadc',
   },
   {
@@ -135,7 +142,8 @@ export const giftGuides: GiftGuide[] = [
     name: 'Toddler Trekkers',
     image: '/gift-guides/toddler-trekkers.webp',
     description:
-      'Climbing, exploring, and testing new limits! These pediatric PT favorites encourage strength, balance, coordination, and motor planning as your toddler learns to navigate the world in new ways.',
+      'Big energy, bigger adventures! Toddlers are busy running, climbing, jumping, and figuring out what their bodies can do. Our pediatric PT-inspired picks encourage balance, coordination, strength, motor planning, and active play as little ones continue building their movement skills.',
+    stage: 'Approximately 18–36 months',
     href: 'https://www.amazon.com/shop/tinytilt/list/11TGM3RN2PR6G?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=8027410c-7fe4-42e6-a171-e3de49589310',
   },
   {
@@ -143,7 +151,8 @@ export const giftGuides: GiftGuide[] = [
     name: 'Preschool Pioneers',
     image: '/gift-guides/preschool-pioneers.webp',
     description:
-      'Jump, balance, and move! Our pediatric PT-picked toys encourage coordination, strength, balance, and motor planning as your little one masters more advanced gross motor skills through play.',
+      'Ready, set, GO! Preschoolers are developing more advanced movement skills and finding new ways to challenge themselves. From hopping and skipping to balancing, throwing, catching, and navigating obstacle courses, our favorite picks encourage coordination, strength, balance, and confidence through play.',
+    stage: 'Approximately 3–5 years',
     href: 'https://www.amazon.com/shop/tinytilt/list/39F3SWLN88AQU?tag=onamztinytilt-20&ref_=hype_hm_sf_e&ccs_id=1b260c89-2b3a-469f-865f-c42bd564eb33',
   },
 ]
