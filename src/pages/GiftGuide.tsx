@@ -31,7 +31,7 @@ export default function GiftGuide() {
               </p>
               <p>
                 Every child develops at their own pace, so find the stage that best fits your
-                little one and explore our favorite picks for learning through play.
+                little one and click on it to explore our favorite picks for learning through play.
               </p>
             </div>
           </div>
@@ -59,7 +59,10 @@ export default function GiftGuide() {
                       <span className="font-semibold">Developmental stage:</span> {guide.stage}
                     </p>
                   )}
-                  <div className="pb-4" />
+                  {/* Looks like a button; the whole card is the link. */}
+                  <span className="mx-4 mt-4 mb-4 block text-center bg-sage-500 text-white px-4 py-2.5 rounded-full text-sm font-semibold group-hover:bg-sage-600 transition-colors">
+                    Click Here to Shop →
+                  </span>
                 </>
               )
               // Guides with their own item list open a page on our site; the rest go to Amazon.
